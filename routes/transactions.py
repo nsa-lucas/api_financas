@@ -1,10 +1,12 @@
 from flask import request, jsonify, Blueprint
+from flask_login import login_required
 from models import Transaction
 from extensions import db
 
 transactions_bp = Blueprint('transactions',__name__, url_prefix='/api/transactions')
 
 @transactions_bp.route('/add', methods=['POST'])
+@login_required
 def add_transactions():
   data = request.json
 

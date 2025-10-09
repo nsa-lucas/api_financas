@@ -1,5 +1,6 @@
 from flask import request, jsonify, Blueprint
-from werkzeug.security import generate_password_hash
+from flask_login import login_required, login_user, logout_user
+from werkzeug.security import generate_password_hash, check_password_hash
 
 from extensions import db
 from models import User
@@ -15,7 +16,7 @@ def add_user():
     # VERIFICANDO SE EMAIL JA EXISTE
     email_already_exists = User.query.filter_by(email=data['email']).first()
 
-    if email_already_exists:
+    if email_already_exists:  
       return jsonify({'message':'Email already exists'}), 400
 
     # CRIPTOGRAFANDO SENHA
@@ -33,20 +34,33 @@ def add_user():
     return jsonify({'message': 'User added successfully'})
 
   return jsonify({'message': 'Invalid user data'}), 400
+
+
+
+@users_bp.route('/login', methods=['POST'])
+def login():
+  data = request.json
+
+  user = User.query.filter_by(email = data['email']).first()
+
+  if not user:
+    return jsonify({'message':'Email or password invalid'}), 400 
+
+
+  password_check = check_password_hash(user.password, data['password'])
+
+  if password_check:
+
+    login_user(user)
+
+    return jsonify({'message':'Authorized login'})
   
+  return jsonify({'message':'Email or password invalid'}), 400 
   
 
-@users_bp.route('/', methods=['GET'])
-def users():
-  users = User.query.all()
+@users_bp.route('/logout', methods=['POST'])
+@login_required
+def logout():
+  logout_user()
 
-  users_list = []
-
-  for user in users:
-    users_list.append({
-      "name": user.name,
-      "email": user.email,
-      "password": user.password
-    })
-  
-  return jsonify(users_list)
+  return jsonify({'message':'Exiting...'})
