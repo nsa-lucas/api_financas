@@ -1,5 +1,5 @@
 from flask import request, jsonify, Blueprint
-from models.transaction import Transaction
+from models import Transaction
 from extensions import db
 
 transactions_bp = Blueprint('transactions',__name__, url_prefix='/api/transactions')
