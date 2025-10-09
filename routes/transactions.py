@@ -16,7 +16,7 @@ def add_transactions():
 
     transaction = Transaction(
       description = data['description'],
-      value = data['value'],
+      amount = data['amount'],
       type = data['type'],
       date = data['date'],
     )
@@ -43,7 +43,7 @@ def transactions():
       all_transactions.append({
         'id': transaction.id,
         'description': transaction.description,
-        'value': transaction.value,
+        'amount': transaction.amount,
         'type': transaction.type,
         'date': transaction.date
       })
@@ -72,9 +72,11 @@ def update_transaction(transaction_id):
 
   if transaction:
     transaction.description = data.get('description', transaction.description)
-    transaction.value = data.get('value', transaction.value)
+    transaction.amount = data.get('amount', transaction.amount)
     transaction.type = data.get('type', transaction.type)
     transaction.date = data.get('date', transaction.date)
+
+    # FUNCIONA POREM TODA VEZ QUE REQUISITADO, IRA ALTERAR TODOS CAMPOS, MESMO QUE SEJAM OS MESMOS VALORES => PENSAR EM UMA LOGICA DIFERENTE
 
     db.session.commit()
 
