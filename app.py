@@ -1,5 +1,4 @@
 from flask import Flask
-from flask_login import LoginManager
 
 from extensions import db, cors, login_manager, migrate
 from routes import register_routes
