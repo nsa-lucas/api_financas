@@ -1,6 +1,5 @@
 from flask import request, jsonify, Blueprint
 from flask_login import current_user, login_required
-from flask_migrate import current
 from models import Transaction, User
 from extensions import db
 
