@@ -4,35 +4,21 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from extensions import db
 from models import User
+from services.user_service import create_user
 
 users_bp = Blueprint('users', __name__, url_prefix='/api/users')
+from flask_migrate import current
 
 @users_bp.route('/add', methods=['POST'])
 def add_user():
   data = request.json
 
   if data.get('name') and data.get('email') and data.get('password'):
+    
+    response, status = create_user(data)
 
-    # VERIFICANDO SE EMAIL JA EXISTE
-    email_already_exists = User.query.filter_by(email=data['email']).first()
-
-    if email_already_exists:  
-      return jsonify({'message':'Email already exists'}), 400
-
-    # CRIPTOGRAFANDO SENHA
-    hashed_password = generate_password_hash(data['password'])
-
-    user = User(
-      name = data['name'],
-      email = data['email'],
-      password = hashed_password
-    )
-
-    db.session.add(user)
-    db.session.commit()
-
-    return jsonify({'message': 'User added successfully'})
-
+    return jsonify(response), status
+  
   return jsonify({'message': 'Invalid user data'}), 400
 
 
@@ -46,14 +32,13 @@ def login():
   if not user:
     return jsonify({'message':'Email or password invalid'}), 400 
 
-
   password_check = check_password_hash(user.password, data['password'])
 
   if password_check:
 
     login_user(user)
 
-    return jsonify({'message':'Authorized login'})
+    return jsonify({'message':'Authorized login'}), 202
   
   return jsonify({'message':'Email or password invalid'}), 400 
   
@@ -64,6 +49,3 @@ def logout():
   logout_user()
   
   return jsonify({'message':'Exiting...'})
-  
-
-  
