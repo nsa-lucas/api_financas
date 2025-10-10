@@ -1,4 +1,5 @@
 from flask import request, jsonify
+from flask_login import login_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from extensions import db
@@ -27,3 +28,18 @@ def create_user(data):
 
   return {'message': 'User added successfully'}, 201
 
+def user_login(data):
+  user = User.query.filter_by(email = data['email']).first()
+
+  if not user:
+    return {'message':'Email or password invalid'}, 400
+
+  password_check = check_password_hash(user.password, data['password'])
+
+  if password_check:
+
+    login_user(user)
+
+    return {'message':'Authorized login'}, 202
+  
+  return {'message':'Email or password invalid'}, 400

@@ -1,13 +1,10 @@
+import json
 from flask import request, jsonify, Blueprint
-from flask_login import login_required, login_user, logout_user
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import login_required, logout_user
 
-from extensions import db
-from models import User
-from services.user_service import create_user
+from services.user_service import create_user, user_login
 
 users_bp = Blueprint('users', __name__, url_prefix='/api/users')
-from flask_migrate import current
 
 @users_bp.route('/add', methods=['POST'])
 def add_user():
@@ -21,27 +18,13 @@ def add_user():
   
   return jsonify({'message': 'Invalid user data'}), 400
 
-
-
 @users_bp.route('/login', methods=['POST'])
 def login():
   data = request.json
 
-  user = User.query.filter_by(email = data['email']).first()
+  response, status = user_login(data)
 
-  if not user:
-    return jsonify({'message':'Email or password invalid'}), 400 
-
-  password_check = check_password_hash(user.password, data['password'])
-
-  if password_check:
-
-    login_user(user)
-
-    return jsonify({'message':'Authorized login'}), 202
-  
-  return jsonify({'message':'Email or password invalid'}), 400 
-  
+  return jsonify(response), status
 
 @users_bp.route('/logout', methods=['POST'])
 @login_required
