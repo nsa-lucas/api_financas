@@ -1,6 +1,7 @@
 from flask import request, jsonify, Blueprint
 from flask_login import current_user, login_required
-from models import Transaction, User
+
+from models import Transaction, Category
 from extensions import db
 
 transactions_bp = Blueprint('transactions',__name__, url_prefix='/api/transactions')
@@ -10,7 +11,20 @@ transactions_bp = Blueprint('transactions',__name__, url_prefix='/api/transactio
 def add_transactions():
   data = request.json
 
-  if data.get('description') and data.get('amount') and data.get('type') and data.get('date'):
+  if data.get('description') and data.get('amount') and data.get('type') and data.get('date') and data.get('category_name'):
+
+    category = Category.query.filter_by(name=data['category_name']).first()
+
+    if not category:
+      new_category = Category(
+        name = data['category_name'],
+        user_id = current_user.id
+      )
+      db.session.add(new_category)
+      db.session.commit()
+
+    else:
+      new_category = category
 
     if data['type'] != 'receita' and data['type'] != 'despesa':
 
@@ -21,7 +35,8 @@ def add_transactions():
       amount = data['amount'],
       type = data['type'],
       date = data['date'],
-      user_id = current_user.id
+      user_id = current_user.id,
+      category_id = new_category.id
     )
 
     db.session.add(transaction)
@@ -51,7 +66,8 @@ def transactions():
         'amount': transaction.amount,
         'type': transaction.type,
         'date': transaction.date,
-        'user_id': transaction.user_id
+        'user_id': transaction.user_id,
+        'catgory_name': transaction.category.name
       })
 
     return jsonify(all_transactions)
