@@ -1,109 +1,47 @@
 from flask import request, jsonify, Blueprint
-from flask_login import current_user, login_required
+from flask_login import login_required
 
-from models import Transaction, Category
-from extensions import db
+from services.transaction_services import (
+    create_transaction,
+    get_transactions,
+    transaction_update,
+    transaction_delete,
+)
 
-transactions_bp = Blueprint('transactions',__name__, url_prefix='/api/transactions')
+transactions_bp = Blueprint("transactions", __name__, url_prefix="/api/transactions")
 
-@transactions_bp.route('/add', methods=['POST'])
+
+@transactions_bp.route("/add", methods=["POST"])
 @login_required
 def add_transactions():
-  data = request.json
+    data = request.json
 
-  if data.get('description') and data.get('amount') and data.get('type') and data.get('date') and data.get('category_name'):
+    response, status = create_transaction(data)
 
-    category = Category.query.filter_by(name=data['category_name']).first()
-
-    if not category:
-      new_category = Category(
-        name = data['category_name'],
-        user_id = current_user.id
-      )
-      db.session.add(new_category)
-      db.session.commit()
-
-    else:
-      new_category = category
-
-    if data['type'] != 'receita' and data['type'] != 'despesa':
-
-      return jsonify({'message': 'Invalid transaction data'}), 400
-
-    transaction = Transaction(
-      description = data['description'],
-      amount = data['amount'],
-      type = data['type'],
-      date = data['date'],
-      user_id = current_user.id,
-      category_id = new_category.id
-    )
-
-    db.session.add(transaction)
-    db.session.commit()
-
-    return jsonify({
-      'message': 'Transaction added successfully',
-      'user': current_user.id
-    })
-  
-  return jsonify({'message': 'Invalid transaction data'}), 400
+    return jsonify(response), status
 
 
-@transactions_bp.route('/', methods=['GET'])
+@transactions_bp.route("/", methods=["GET"])
 @login_required
 def transactions():
-  transactions = Transaction.query.filter_by(user_id=current_user.id)
+    response, status = get_transactions()
 
-  all_transactions = []
+    return jsonify(response), status
 
-  if transactions:
 
-    for transaction in transactions:
-      all_transactions.append({
-        'id': transaction.id,
-        'description': transaction.description,
-        'amount': transaction.amount,
-        'type': transaction.type,
-        'date': transaction.date,
-        'user_id': transaction.user_id,
-        'catgory_name': transaction.category.name
-      })
-
-    return jsonify(all_transactions)
-
-  return jsonify({'message': 'Transactions not found'})
-
-@transactions_bp.route('/delete/<int:transaction_id>', methods=['DELETE'])
-@login_required
-def delete_transaction(transaction_id):
-  transaction = Transaction.query.get(transaction_id)
-
-  if transaction and transaction.user_id == current_user.id:
-    db.session.delete(transaction)
-    db.session.commit()
-
-    return jsonify({'message': 'Transaction deleted successfully'})
-    
-  return jsonify({'message': 'Transaction not found'}), 404
-
-@transactions_bp.route('/update/<int:transaction_id>', methods=['PUT'])
+@transactions_bp.route("/update/<int:transaction_id>", methods=["PUT"])
 @login_required
 def update_transaction(transaction_id):
-  data = request.json
+    data = request.json
 
-  transaction = Transaction.query.get(transaction_id)
+    response, status = transaction_update(data, transaction_id)
 
-  if transaction and transaction.user_id == current_user.id:
-    transaction.description = data.get('description', transaction.description)
-    transaction.amount = data.get('amount', transaction.amount)
-    transaction.type = data.get('type', transaction.type)
-    transaction.date = data.get('date', transaction.date)
+    return jsonify(response), status
 
-    # FUNCIONA POREM TODA VEZ QUE REQUISITADO, IRA ALTERAR TODOS CAMPOS, MESMO QUE SEJAM OS MESMOS VALORES => PENSAR EM UMA LOGICA DIFERENTE
 
-    db.session.commit()
+@transactions_bp.route("/delete/<int:transaction_id>", methods=["DELETE"])
+@login_required
+def delete_transaction(transaction_id):
+    response, status = transaction_delete(transaction_id)
 
-    return jsonify({'message': 'Transaction updated successfully'})
-
-  return jsonify({'message': 'Transaction not found'}), 404
+    return jsonify(response), status
