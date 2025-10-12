@@ -16,7 +16,7 @@ def create_transaction(data):
         category_id = get_category(data["category_name"])
 
         if data["type"] != "receita" and data["type"] != "despesa":
-            return {"message": "Invalid transaction data"}, 400
+            return {"message": "Invalid transaction type data"}, 400
 
         transaction = Transaction(
             description=data["description"],
@@ -60,29 +60,31 @@ def get_transactions():
 
 def transaction_update(data, transaction_id):
     if not data:
-        return {"message": "No fields provided"}, 400
+        return {"message": "No data changed"}, 400
 
     transaction = Transaction.query.filter(
         Transaction.id == transaction_id, Transaction.user_id == current_user.id
-    ).first()  # TRATATIVA PARA QUE UM USUARIO NAO POSSA ALTERAR UMA TRANSAÇÃO DE OUTRO USUARIO PELO ID DE TRANSAÇÃO
+    ).first()  # RETORNA TRANSAÇÃO DO USUARIO LOGADO
 
-    if (
-        data.get("category_name")
-        and data.get("category_name") != transaction.category.name
-    ):
-        category_id = get_category(data.get("category_name"))
-
-    else:
-        category_id = transaction.category_id
-
+    # VERIFICANDO SE TRANSAÇÃO EXISTE
     if transaction:
+        # VERIFICA SE O USUARIO PASSOU UMA NOVO NOME PARA CATEGORIA E O NOME É DIFERENTE DO ATUAL
+        if (
+            data.get("category_name")
+            and data.get("category_name") != transaction.category.name
+        ):
+            # SE TRUE, CHAMA A FUNCAO GET_CATEOGORY, ONDE SERA REQUISITADO OU CRIADO A NOVA CATEGORIA
+            category_id = get_category(data.get("category_name"))
+
+        else:
+            # SE FALSE, RETORNA O ID DA CATEGORIA ATUAL
+            category_id = transaction.category_id
+
         transaction.description = data.get("description", transaction.description)
         transaction.amount = data.get("amount", transaction.amount)
         transaction.type = data.get("type", transaction.type)
         transaction.date = data.get("date", transaction.date)
         transaction.category_id = category_id
-
-        # FUNCIONA POREM TODA VEZ QUE REQUISITADO, IRA ALTERAR TODOS CAMPOS, MESMO QUE SEJAM OS MESMOS VALORES => PENSAR EM UMA LOGICA DIFERENTE
 
         db.session.commit()
 

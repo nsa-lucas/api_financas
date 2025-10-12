@@ -4,23 +4,23 @@ from extensions import db, cors, login_manager, migrate
 from routes import register_routes
 from config import Config
 
-application = Flask(__name__)
-application.config.from_object(Config)
+app = Flask(__name__)
+app.config.from_object(Config)
 
-db.init_app(application)
-login_manager.init_app(application)
-migrate.init_app(application, db)
-cors.init_app(application)
-register_routes(application)
+db.init_app(app)
+login_manager.init_app(app)
+migrate.init_app(app, db)
+cors.init_app(app)
+register_routes(app)
 
 
-@application.route("/")
+@app.route("/")
 def init_app():
     return jsonify({"status": "ok", "message": "API running", "version": "1.0"})
 
 
 # Modo debug - DEV
 if __name__ == "__main__":
-    with application.app_context():
+    with app.app_context():
         db.create_all()
-    application.run(debug=True)
+    app.run(debug=True)
