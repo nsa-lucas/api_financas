@@ -1,4 +1,5 @@
 from flask_login import current_user
+from sqlalchemy import func
 
 from extensions import db
 from models.Transaction import Transaction
@@ -15,13 +16,15 @@ def create_transaction(data):
     ):
         category_id = get_category(data["category_name"])
 
-        if data["type"] != "receita" and data["type"] != "despesa":
+        transaction_type = data["type"].strip().lower()
+
+        if transaction_type != "receita" and transaction_type != "despesa":
             return {"message": "Invalid transaction type data"}, 400
 
         transaction = Transaction(
             description=data["description"],
             amount=data["amount"],
-            type=data["type"],
+            type=transaction_type,
             date=data["date"],
             user_id=current_user.id,
             category_id=category_id,
@@ -43,6 +46,25 @@ def get_transactions():
     if not transactions:
         return ({"message": "Transactions not found"}), 404
 
+    total_expense = (
+        db.session.query(func.sum(Transaction.amount))
+        .filter(Transaction.user_id == current_user.id, Transaction.type == "despesa")
+        .scalar()
+    ) or 0
+
+    total_income = (
+        db.session.query(func.sum(Transaction.amount))
+        .filter(Transaction.user_id == current_user.id, Transaction.type == "receita")
+        .scalar()
+    ) or 0
+
+    # if not total_expense:
+    #     total_expense = 0
+    # if not total_income:
+    #     total_income = 0
+
+    balance = total_income - total_expense
+
     all_transactions = [
         {
             "id": t.id,
@@ -57,7 +79,10 @@ def get_transactions():
         for t in transactions
     ]
 
-    return all_transactions, 200
+    return {
+        "Transações": all_transactions,
+        "Totais": {"Despesa": total_expense, "Receita": total_income, "Saldo": balance},
+    }, 200
 
 
 def transaction_update(data, transaction_id):
