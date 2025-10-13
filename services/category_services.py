@@ -11,7 +11,7 @@ def create_category(category_name):
     if Category.query.filter(
         Category.name == category_name, Category.user_id == current_user.id
     ).first():
-        return {"message": "Category name already exists"}, 400
+        return {"message": "Category name already exists"}, 409
 
     category = Category(
         name=category_name.strip().lower(),  # transformando texto em caixa baixa
@@ -25,8 +25,8 @@ def create_category(category_name):
 
 # FUNCAO PARA REQUISTAR OU CRIAR UMA CATEGORIA PELA ROTA DE CRIAÇÃO DE TRANSAÇÃO
 def get_category(category_name):
-    category = Category.query.filter_by(
-        name=category_name, user_id=current_user.id
+    category = Category.query.filter(
+        Category.name == category_name, Category.user_id == current_user.id
     ).first()
 
     if category:
@@ -44,7 +44,7 @@ def get_category(category_name):
 
 # RETORNA TODAS AS CATEGORIAS DO USUARIO
 def get_categories():
-    categories = Category.query.filter_by(user_id=current_user.id).all()
+    categories = Category.query.filter(Category.user_id == current_user.id).all()
 
     if not categories:
         return {"message": "Categories not found"}, 404
@@ -62,7 +62,9 @@ def get_categories():
 
 
 def update_category_name(data, category_id):
-    category = Category.query.filter_by(id=category_id, user_id=current_user.id).first()
+    category = Category.query.filter(
+        Category.id == category_id, Category.user_id == current_user.id
+    ).first()
 
     new_category_name = data.get("category_name").strip().lower()
 
@@ -71,7 +73,7 @@ def update_category_name(data, category_id):
         if Category.query.filter(
             Category.name == new_category_name, Category.user_id == current_user.id
         ).first():
-            return {"message": "Category name already exists"}, 400
+            return {"message": "Category name already exists"}, 409
 
         category.name = new_category_name
         db.session.commit()
@@ -82,7 +84,9 @@ def update_category_name(data, category_id):
 
 
 def delete_category_unused(category_id):
-    category = Category.query.filter_by(id=category_id, user_id=current_user.id).first()
+    category = Category.query.filter(
+        Category.id == category_id, Category.user_id == current_user.id
+    ).first()
 
     if category:
         category_used = Transaction.query.filter(

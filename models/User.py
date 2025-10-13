@@ -9,9 +9,11 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), nullable=False, unique=True)
     password = db.Column(db.String(200), nullable=False)
     transactions = db.relationship(
-        "Transaction", backref="user", lazy=True
+        "Transaction", backref="user", lazy=True, cascade="all, delete"
     )  # lazy=true só recupera as informações de transações quando for requisitado
-    categories = db.relationship("Category", backref="user", lazy=True)
+    categories = db.relationship(
+        "Category", backref="user", lazy=True, cascade="all, delete"
+    )
 
 
 @login_manager.user_loader

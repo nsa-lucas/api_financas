@@ -36,7 +36,9 @@ def create_transaction(data):
 
 
 def get_transactions():
-    transactions = Transaction.query.filter_by(user_id=current_user.id).all()
+    transactions = Transaction.query.filter(
+        Transaction.user_id == current_user.id
+    ).all()
 
     if not transactions:
         return ({"message": "Transactions not found"}), 404
