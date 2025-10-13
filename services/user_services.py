@@ -15,7 +15,7 @@ def create_user(data):
             return {"message": "Email already exists"}, 409
 
         # CRIPTOGRAFANDO SENHA
-        if data["password"].len <= 8:
+        if len(data["password"]) <= 8:
             return {"message": "Password must contain 8 characters or more"}, 400
 
         hashed_password = generate_password_hash(data["password"], "pbkdf2:sha256", 8)
