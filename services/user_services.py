@@ -64,7 +64,7 @@ def update_user_data(data):
         user.email = email
 
     if password:
-        if password.len <= 8:
+        if len(password) <= 8:
             return {"message": "Password must contain 8 characters or more"}, 400
 
         password_hashed = generate_password_hash(password, "pbkdf2:sha256", 8)
