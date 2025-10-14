@@ -3,7 +3,9 @@ from flask_login import login_required
 
 from services.transaction_services import (
     create_transaction,
+    import_transactions_json,
     get_transactions,
+    export_transactions_json,
     transaction_update,
     transaction_delete,
 )
@@ -21,12 +23,30 @@ def add_transactions():
     return jsonify(response), status
 
 
+@transactions_bp.route("/add/import", methods=["POST"])
+@login_required
+def import_transactions():
+    file = request.files["file"]
+
+    response, status = import_transactions_json(file)
+
+    return jsonify(response), status
+
+
 @transactions_bp.route("/", methods=["GET"])
 @login_required
 def transactions():
     response, status = get_transactions()
 
     return jsonify(response), status
+
+
+@transactions_bp.route("/export", methods=["GET"])
+@login_required
+def export_transactions():
+    response, status = export_transactions_json()
+
+    return response, status
 
 
 @transactions_bp.route("/update/<int:transaction_id>", methods=["PUT"])

@@ -1,5 +1,9 @@
+import datetime
+from flask import send_file
 from flask_login import current_user
 from sqlalchemy import func
+import json
+from io import BytesIO
 
 from extensions import db
 from models.Transaction import Transaction
@@ -36,6 +40,45 @@ def create_transaction(data):
         return {"message": "Transaction added successfully"}, 201
 
     return {"message": "Invalid transaction data"}, 400
+
+
+def import_transactions_json(file):
+    if file.content_type != "application/json":
+        return {"message": "Invalid json file"}, 400
+
+    transactions_json = json.load(file)
+
+    for item in transactions_json:
+        if not (
+            item.get["description"]
+            and item.get["amount"]
+            and item.get["type"]
+            and item.get["date"]
+            and item.get["category_name"]
+        ):
+            return {"message": "Invalid json items"}, 400
+
+        category_id = get_category(item["category_name"])
+
+        transaction_type = item["type"].strip().lower()
+
+        if transaction_type != "receita" and transaction_type != "despesa":
+            return {"message": "Invalid transaction type data"}, 400
+
+        transaction = Transaction(
+            description=item["description"],
+            amount=item["amount"],
+            type=transaction_type,
+            date=item["date"],
+            user_id=current_user.id,
+            category_id=category_id,
+        )
+
+        db.session.add(transaction)
+
+    db.session.commit()
+
+    return {"message": "Transactions list import successfully"}, 201
 
 
 def get_transactions():
@@ -83,6 +126,40 @@ def get_transactions():
         "Transações": all_transactions,
         "Totais": {"Despesa": total_expense, "Receita": total_income, "Saldo": balance},
     }, 200
+
+
+def export_transactions_json():
+    transactions = Transaction.query.filter(
+        Transaction.user_id == current_user.id
+    ).all()
+
+    if not transactions:
+        return ({"message": "Transactions not found"}), 404
+
+    all_transactions = [
+        {
+            "description": t.description,
+            "amount": t.amount,
+            "type": t.type,
+            "date": t.date.strftime("%d-%m-%Y"),
+            "category_name": t.category.name,
+        }
+        for t in transactions
+    ]
+
+    # Gera JSON formatado
+    json_data = json.dumps(all_transactions, ensure_ascii=False, indent=2)
+
+    # Cria arquivo em memória
+    buffer = BytesIO()
+    buffer.write(json_data.encode("utf-8"))
+    buffer.seek(0)
+
+    filename = "transactions_export.json"
+
+    return send_file(
+        buffer, as_attachment=True, download_name=filename, mimetype="application/json"
+    ), 200
 
 
 def transaction_update(data, transaction_id):
