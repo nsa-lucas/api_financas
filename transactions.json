@@ -1,0 +1,542 @@
+[
+  {
+    "description": "Compra de supermercado",
+    "amount": 320.45,
+    "type": "despesa",
+    "date": "08-01-2023",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 4200.00,
+    "type": "receita",
+    "date": "06-01-2023",
+    "category_name": "Renda fixa"
+  },
+  {
+    "description": "Pagamento de aluguel",
+    "amount": 1100.00,
+    "type": "despesa",
+    "date": "05-02-2023",
+    "category_name": "Moradia"
+  },
+  {
+    "description": "Conta de luz",
+    "amount": 210.80,
+    "type": "despesa",
+    "date": "12-02-2023",
+    "category_name": "Contas domésticas"
+  },
+  {
+    "description": "Venda de celular antigo",
+    "amount": 900.00,
+    "type": "receita",
+    "date": "17-02-2023",
+    "category_name": "Vendas"
+  },
+  {
+    "description": "Cinema com amigos",
+    "amount": 60.00,
+    "type": "despesa",
+    "date": "19-02-2023",
+    "category_name": "Lazer"
+  },
+  {
+    "description": "Supermercado do mês",
+    "amount": 740.90,
+    "type": "despesa",
+    "date": "10-03-2023",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 4200.00,
+    "type": "receita",
+    "date": "06-03-2023",
+    "category_name": "Renda fixa"
+  },
+  {
+    "description": "Conta de internet",
+    "amount": 120.00,
+    "type": "despesa",
+    "date": "15-03-2023",
+    "category_name": "Contas domésticas"
+  },
+  {
+    "description": "Venda de bicicleta usada",
+    "amount": 700.00,
+    "type": "receita",
+    "date": "20-03-2023",
+    "category_name": "Vendas"
+  },
+  {
+    "description": "Restaurante com família",
+    "amount": 180.00,
+    "type": "despesa",
+    "date": "25-03-2023",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Compra de livros técnicos",
+    "amount": 210.00,
+    "type": "despesa",
+    "date": "03-04-2023",
+    "category_name": "Educação"
+  },
+  {
+    "description": "Freelance de design",
+    "amount": 950.00,
+    "type": "receita",
+    "date": "10-04-2023",
+    "category_name": "Trabalho extra"
+  },
+  {
+    "description": "Conta de água",
+    "amount": 70.00,
+    "type": "despesa",
+    "date": "14-04-2023",
+    "category_name": "Contas domésticas"
+  },
+  {
+    "description": "Pagamento de aluguel",
+    "amount": 1100.00,
+    "type": "despesa",
+    "date": "05-05-2023",
+    "category_name": "Moradia"
+  },
+  {
+    "description": "Assinatura Netflix",
+    "amount": 55.90,
+    "type": "despesa",
+    "date": "12-05-2023",
+    "category_name": "Entretenimento"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 4200.00,
+    "type": "receita",
+    "date": "06-05-2023",
+    "category_name": "Renda fixa"
+  },
+  {
+    "description": "Supermercado semanal",
+    "amount": 280.70,
+    "type": "despesa",
+    "date": "16-06-2023",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Venda de computador usado",
+    "amount": 1200.00,
+    "type": "receita",
+    "date": "20-06-2023",
+    "category_name": "Vendas"
+  },
+  {
+    "description": "Conta de celular",
+    "amount": 89.90,
+    "type": "despesa",
+    "date": "25-06-2023",
+    "category_name": "Contas domésticas"
+  },
+  {
+    "description": "Compra de roupas",
+    "amount": 390.00,
+    "type": "despesa",
+    "date": "03-07-2023",
+    "category_name": "Vestuário"
+  },
+  {
+    "description": "Freelance de programação",
+    "amount": 1600.00,
+    "type": "receita",
+    "date": "09-07-2023",
+    "category_name": "Trabalho extra"
+  },
+  {
+    "description": "Restaurante japonês",
+    "amount": 220.00,
+    "type": "despesa",
+    "date": "14-07-2023",
+    "category_name": "Lazer"
+  },
+  {
+    "description": "Pagamento de aluguel",
+    "amount": 1100.00,
+    "type": "despesa",
+    "date": "05-08-2023",
+    "category_name": "Moradia"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 4200.00,
+    "type": "receita",
+    "date": "06-08-2023",
+    "category_name": "Renda fixa"
+  },
+  {
+    "description": "Viagem de férias",
+    "amount": 2500.00,
+    "type": "despesa",
+    "date": "15-08-2023",
+    "category_name": "Lazer"
+  },
+  {
+    "description": "Venda de móveis usados",
+    "amount": 800.00,
+    "type": "receita",
+    "date": "22-09-2023",
+    "category_name": "Vendas"
+  },
+  {
+    "description": "Consulta médica",
+    "amount": 300.00,
+    "type": "despesa",
+    "date": "28-09-2023",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Conta de internet",
+    "amount": 120.00,
+    "type": "despesa",
+    "date": "10-10-2023",
+    "category_name": "Contas domésticas"
+  },
+  {
+    "description": "Freelance de tradução",
+    "amount": 600.00,
+    "type": "receita",
+    "date": "20-11-2023",
+    "category_name": "Trabalho extra"
+  },
+  {
+    "description": "Assinatura Spotify",
+    "amount": 34.90,
+    "type": "despesa",
+    "date": "22-11-2023",
+    "category_name": "Entretenimento"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 4200.00,
+    "type": "receita",
+    "date": "06-12-2023",
+    "category_name": "Renda fixa"
+  },
+  {
+    "description": "Ceia de Natal",
+    "amount": 640.00,
+    "type": "despesa",
+    "date": "24-12-2023",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Bônus de fim de ano",
+    "amount": 3000.00,
+    "type": "receita",
+    "date": "28-12-2023",
+    "category_name": "Renda extra"
+  }
+
+
+    ,
+    {
+        "description": "Pagamento de aluguel",
+        "amount": 1200.00,
+        "type": "despesa",
+        "date": "05-01-2024",
+        "category_name": "Moradia"
+    },
+    {
+        "description": "Salário mensal",
+        "amount": 4500.00,
+        "type": "receita",
+        "date": "06-01-2024",
+        "category_name": "Renda fixa"
+    },
+    {
+        "description": "Supermercado do mês",
+        "amount": 850.45,
+        "type": "despesa",
+        "date": "09-01-2024",
+        "category_name": "Alimentação"
+    },
+    {
+        "description": "Venda de produtos usados",
+        "amount": 320.00,
+        "type": "receita",
+        "date": "14-01-2024",
+        "category_name": "Vendas"
+    },
+    {
+        "description": "Conta de energia elétrica",
+        "amount": 230.80,
+        "type": "despesa",
+        "date": "22-01-2024",
+        "category_name": "Contas domésticas"
+    },
+    {
+        "description": "Combustível carro",
+        "amount": 290.60,
+        "type": "despesa",
+        "date": "03-02-2024",
+        "category_name": "Transporte"
+    },
+    {
+        "description": "Freelance design gráfico",
+        "amount": 780.00,
+        "type": "receita",
+        "date": "08-02-2024",
+        "category_name": "Trabalho extra"
+    },
+    {
+        "description": "Cinema com amigos",
+        "amount": 65.00,
+        "type": "despesa",
+        "date": "17-02-2024",
+        "category_name": "Lazer"
+    },
+    {
+        "description": "Assinatura Netflix",
+        "amount": 55.90,
+        "type": "despesa",
+        "date": "20-02-2024",
+        "category_name": "Entretenimento"
+    },
+    {
+        "description": "Compra de roupas",
+        "amount": 400.00,
+        "type": "despesa",
+        "date": "05-03-2024",
+        "category_name": "Vestuário"
+    },
+    {
+        "description": "Venda de eletrônicos",
+        "amount": 950.00,
+        "type": "receita",
+        "date": "15-03-2024",
+        "category_name": "Vendas"
+    },
+    {
+        "description": "Conta de internet",
+        "amount": 120.00,
+        "type": "despesa",
+        "date": "18-03-2024",
+        "category_name": "Contas domésticas"
+    },
+    {
+        "description": "Salário mensal",
+        "amount": 4500.00,
+        "type": "receita",
+        "date": "06-04-2024",
+        "category_name": "Renda fixa"
+    },
+    {
+        "description": "Supermercado semanal",
+        "amount": 240.90,
+        "type": "despesa",
+        "date": "10-04-2024",
+        "category_name": "Alimentação"
+    },
+    {
+        "description": "Consulta médica",
+        "amount": 250.00,
+        "type": "despesa",
+        "date": "12-04-2024",
+        "category_name": "Saúde"
+    },
+    {
+        "description": "Pagamento de aluguel",
+        "amount": 1200.00,
+        "type": "despesa",
+        "date": "05-05-2024",
+        "category_name": "Moradia"
+    },
+    {
+        "description": "Venda de bike usada",
+        "amount": 700.00,
+        "type": "receita",
+        "date": "15-05-2024",
+        "category_name": "Vendas"
+    },
+    {
+        "description": "Restaurante com família",
+        "amount": 180.50,
+        "type": "despesa",
+        "date": "19-05-2024",
+        "category_name": "Alimentação"
+    },
+    {
+        "description": "Curso online de Python",
+        "amount": 150.00,
+        "type": "despesa",
+        "date": "27-05-2024",
+        "category_name": "Educação"
+    },
+    {
+        "description": "Freelance site pessoal",
+        "amount": 1200.00,
+        "type": "receita",
+        "date": "04-06-2024",
+        "category_name": "Trabalho extra"
+    },
+    {
+        "description": "Compra de livros",
+        "amount": 95.00,
+        "type": "despesa",
+        "date": "09-06-2024",
+        "category_name": "Educação"
+    },
+    {
+        "description": "Conta de água",
+        "amount": 80.00,
+        "type": "despesa",
+        "date": "15-06-2024",
+        "category_name": "Contas domésticas"
+    },
+    {
+        "description": "Pagamento de aluguel",
+        "amount": 1200.00,
+        "type": "despesa",
+        "date": "05-07-2024",
+        "category_name": "Moradia"
+    },
+    {
+        "description": "Venda de móveis usados",
+        "amount": 650.00,
+        "type": "receita",
+        "date": "11-07-2024",
+        "category_name": "Vendas"
+    },
+    {
+        "description": "Supermercado semanal",
+        "amount": 210.70,
+        "type": "despesa",
+        "date": "18-07-2024",
+        "category_name": "Alimentação"
+    },
+    {
+        "description": "Assinatura Spotify",
+        "amount": 34.90,
+        "type": "despesa",
+        "date": "25-07-2024",
+        "category_name": "Entretenimento"
+    },
+    {
+        "description": "Salário mensal",
+        "amount": 4500.00,
+        "type": "receita",
+        "date": "06-08-2024",
+        "category_name": "Renda fixa"
+    },
+    {
+        "description": "Viagem de fim de semana",
+        "amount": 890.00,
+        "type": "despesa",
+        "date": "16-08-2024",
+        "category_name": "Lazer"
+    },
+    {
+        "description": "Manutenção do carro",
+        "amount": 480.00,
+        "type": "despesa",
+        "date": "21-09-2024",
+        "category_name": "Transporte"
+    },
+    {
+        "description": "Freelance desenvolvimento web",
+        "amount": 1500.00,
+        "type": "receita",
+        "date": "28-09-2024",
+        "category_name": "Trabalho extra"
+    },
+    
+    
+    {"description": "Salário mensal", "amount": 4500.00, "type": "receita", "date": "03-01-2025", "category_name": "Salário"},
+    {"description": "Compra supermercado", "amount": 320.75, "type": "despesa", "date": "04-01-2025", "category_name": "Alimentação"},
+    {"description": "Conta de luz", "amount": 210.40, "type": "despesa", "date": "08-01-2025", "category_name": "Moradia"},
+    {"description": "Venda de celular usado", "amount": 800.00, "type": "receita", "date": "10-01-2025", "category_name": "Vendas"},
+    {"description": "Assinatura Netflix", "amount": 39.90, "type": "despesa", "date": "12-01-2025", "category_name": "Entretenimento"},
+    {"description": "Compra de roupas", "amount": 250.00, "type": "despesa", "date": "14-01-2025", "category_name": "Vestuário"},
+    {"description": "Reembolso viagem a trabalho", "amount": 600.00, "type": "receita", "date": "18-01-2025", "category_name": "Reembolsos"},
+    {"description": "Jantar em restaurante", "amount": 120.50, "type": "despesa", "date": "20-01-2025", "category_name": "Alimentação"},
+    {"description": "Pagamento de aluguel", "amount": 1500.00, "type": "despesa", "date": "25-01-2025", "category_name": "Moradia"},
+    {"description": "Bônus de desempenho", "amount": 1200.00, "type": "receita", "date": "30-01-2025", "category_name": "Salário"},
+    
+    {"description": "Mensalidade academia", "amount": 99.90, "type": "despesa", "date": "02-02-2025", "category_name": "Saúde"},
+    {"description": "Freelance de design", "amount": 650.00, "type": "receita", "date": "03-02-2025", "category_name": "Serviços"},
+    {"description": "Combustível", "amount": 200.00, "type": "despesa", "date": "05-02-2025", "category_name": "Transporte"},
+    {"description": "Compra de livro técnico", "amount": 80.00, "type": "despesa", "date": "07-02-2025", "category_name": "Educação"},
+    {"description": "Pagamento de internet", "amount": 120.00, "type": "despesa", "date": "10-02-2025", "category_name": "Moradia"},
+    {"description": "Venda de bicicleta", "amount": 700.00, "type": "receita", "date": "12-02-2025", "category_name": "Vendas"},
+    {"description": "Compra de presente", "amount": 90.00, "type": "despesa", "date": "15-02-2025", "category_name": "Pessoal"},
+    {"description": "Reembolso alimentação empresa", "amount": 180.00, "type": "receita", "date": "18-02-2025", "category_name": "Reembolsos"},
+    {"description": "Cinema", "amount": 45.00, "type": "despesa", "date": "20-02-2025", "category_name": "Entretenimento"},
+    {"description": "Salário mensal", "amount": 4500.00, "type": "receita", "date": "28-02-2025", "category_name": "Salário"},
+    
+    {"description": "Conta de água", "amount": 90.20, "type": "despesa", "date": "03-03-2025", "category_name": "Moradia"},
+    {"description": "Compra supermercado", "amount": 310.80, "type": "despesa", "date": "05-03-2025", "category_name": "Alimentação"},
+    {"description": "Pagamento Spotify", "amount": 19.90, "type": "despesa", "date": "06-03-2025", "category_name": "Entretenimento"},
+    {"description": "Venda de acessórios", "amount": 150.00, "type": "receita", "date": "08-03-2025", "category_name": "Vendas"},
+    {"description": "Curso online de Python", "amount": 250.00, "type": "despesa", "date": "09-03-2025", "category_name": "Educação"},
+    {"description": "Serviço de fotografia", "amount": 1000.00, "type": "receita", "date": "12-03-2025", "category_name": "Serviços"},
+    {"description": "Seguro do carro", "amount": 800.00, "type": "despesa", "date": "14-03-2025", "category_name": "Transporte"},
+    {"description": "Café da manhã padaria", "amount": 18.50, "type": "despesa", "date": "15-03-2025", "category_name": "Alimentação"},
+    {"description": "Salário mensal", "amount": 4500.00, "type": "receita", "date": "30-03-2025", "category_name": "Salário"},
+    {"description": "Doação ONG", "amount": 50.00, "type": "despesa", "date": "31-03-2025", "category_name": "Doações"},
+    
+    {"description": "Compra supermercado", "amount": 285.40, "type": "despesa", "date": "02-04-2025", "category_name": "Alimentação"},
+    {"description": "Pagamento aluguel", "amount": 1500.00, "type": "despesa", "date": "03-04-2025", "category_name": "Moradia"},
+    {"description": "Freelance de site", "amount": 900.00, "type": "receita", "date": "05-04-2025", "category_name": "Serviços"},
+    {"description": "Assinatura Adobe", "amount": 90.00, "type": "despesa", "date": "07-04-2025", "category_name": "Trabalho"},
+    {"description": "Compra de flores", "amount": 45.00, "type": "despesa", "date": "09-04-2025", "category_name": "Pessoal"},
+    {"description": "Venda de monitor", "amount": 400.00, "type": "receita", "date": "12-04-2025", "category_name": "Vendas"},
+    {"description": "Conta de energia", "amount": 210.00, "type": "despesa", "date": "15-04-2025", "category_name": "Moradia"},
+    {"description": "Aplicativo de transporte", "amount": 35.00, "type": "despesa", "date": "18-04-2025", "category_name": "Transporte"},
+    {"description": "Salário mensal", "amount": 4500.00, "type": "receita", "date": "30-04-2025", "category_name": "Salário"},
+    {"description": "Manutenção computador", "amount": 250.00, "type": "despesa", "date": "01-05-2025", "category_name": "Trabalho"},
+    
+    {"description": "Venda de móveis usados", "amount": 600.00, "type": "receita", "date": "03-05-2025", "category_name": "Vendas"},
+    {"description": "Consulta médica", "amount": 200.00, "type": "despesa", "date": "05-05-2025", "category_name": "Saúde"},
+    {"description": "Farmácia", "amount": 65.00, "type": "despesa", "date": "07-05-2025", "category_name": "Saúde"},
+    {"description": "Reembolso viagem", "amount": 500.00, "type": "receita", "date": "10-05-2025", "category_name": "Reembolsos"},
+    {"description": "Curso inglês", "amount": 350.00, "type": "despesa", "date": "12-05-2025", "category_name": "Educação"},
+    {"description": "Salário mensal", "amount": 4500.00, "type": "receita", "date": "30-05-2025", "category_name": "Salário"},
+    {"description": "Compra supermercado", "amount": 298.00, "type": "despesa", "date": "01-06-2025", "category_name": "Alimentação"},
+    {"description": "Gasolina", "amount": 210.00, "type": "despesa", "date": "03-06-2025", "category_name": "Transporte"},
+    {"description": "Venda de tênis", "amount": 180.00, "type": "receita", "date": "06-06-2025", "category_name": "Vendas"},
+    {"description": "Conta de luz", "amount": 205.00, "type": "despesa", "date": "09-06-2025", "category_name": "Moradia"},
+    
+    {"description": "Salário mensal", "amount": 4500.00, "type": "receita", "date": "30-06-2025", "category_name": "Salário"},
+    {"description": "Compra de eletrônicos", "amount": 950.00, "type": "despesa", "date": "02-07-2025", "category_name": "Tecnologia"},
+    {"description": "Venda de relógio", "amount": 400.00, "type": "receita", "date": "04-07-2025", "category_name": "Vendas"},
+    {"description": "Assinatura Amazon Prime", "amount": 14.90, "type": "despesa", "date": "06-07-2025", "category_name": "Entretenimento"},
+    {"description": "Mensalidade academia", "amount": 99.90, "type": "despesa", "date": "08-07-2025", "category_name": "Saúde"},
+    {"description": "Compra de livros", "amount": 180.00, "type": "despesa", "date": "12-07-2025", "category_name": "Educação"},
+    {"description": "Freelance programação", "amount": 1200.00, "type": "receita", "date": "15-07-2025", "category_name": "Serviços"},
+    {"description": "Conta de água", "amount": 85.00, "type": "despesa", "date": "18-07-2025", "category_name": "Moradia"},
+    {"description": "Café com amigos", "amount": 35.00, "type": "despesa", "date": "22-07-2025", "category_name": "Alimentação"},
+    {"description": "Salário mensal", "amount": 4500.00, "type": "receita", "date": "30-07-2025", "category_name": "Salário"},
+    
+    {"description": "Compra supermercado", "amount": 305.00, "type": "despesa", "date": "01-08-2025", "category_name": "Alimentação"},
+    {"description": "Seguro residência", "amount": 400.00, "type": "despesa", "date": "03-08-2025", "category_name": "Moradia"},
+    {"description": "Venda de notebook", "amount": 2000.00, "type": "receita", "date": "05-08-2025", "category_name": "Vendas"},
+    {"description": "Passeio parque", "amount": 50.00, "type": "despesa", "date": "08-08-2025", "category_name": "Entretenimento"},
+    {"description": "Pagamento aluguel", "amount": 1500.00, "type": "despesa", "date": "10-08-2025", "category_name": "Moradia"},
+    {"description": "Venda de livros usados", "amount": 120.00, "type": "receita", "date": "12-08-2025", "category_name": "Vendas"},
+    {"description": "Salário mensal", "amount": 4500.00, "type": "receita", "date": "30-08-2025", "category_name": "Salário"},
+    {"description": "Compra de fone de ouvido", "amount": 150.00, "type": "despesa", "date": "03-09-2025", "category_name": "Tecnologia"},
+    {"description": "Corte de cabelo", "amount": 40.00, "type": "despesa", "date": "05-09-2025", "category_name": "Pessoal"},
+    {"description": "Reembolso combustível", "amount": 180.00, "type": "receita", "date": "10-09-2025", "category_name": "Reembolsos"},
+    
+    {"description": "Conta de energia", "amount": 210.00, "type": "despesa", "date": "12-09-2025", "category_name": "Moradia"},
+    {"description": "Salário mensal", "amount": 4500.00, "type": "receita", "date": "30-09-2025", "category_name": "Salário"},
+    {"description": "Compra supermercado", "amount": 315.00, "type": "despesa", "date": "02-10-2025", "category_name": "Alimentação"},
+    {"description": "Venda de guitarra", "amount": 900.00, "type": "receita", "date": "05-10-2025", "category_name": "Vendas"},
+    {"description": "Consulta dentista", "amount": 250.00, "type": "despesa", "date": "08-10-2025", "category_name": "Saúde"},
+    {"description": "Assinatura Spotify", "amount": 19.90, "type": "despesa", "date": "10-10-2025", "category_name": "Entretenimento"},
+    {"description": "Compra de materiais escritório", "amount": 75.00, "type": "despesa", "date": "12-10-2025", "category_name": "Trabalho"},
+    {"description": "Venda de câmera", "amount": 1500.00, "type": "receita", "date": "14-10-2025", "category_name": "Vendas"},
+    {"description": "Conta de água", "amount": 88.00, "type": "despesa", "date": "14-10-2025", "category_name": "Moradia"},
+    {"description": "Salário mensal", "amount": 4500.00, "type": "receita", "date": "14-10-2025", "category_name": "Salário"}
+]

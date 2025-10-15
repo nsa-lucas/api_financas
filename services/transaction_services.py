@@ -1,9 +1,9 @@
-import datetime
 from flask import send_file
 from flask_login import current_user
-from sqlalchemy import func
+from sqlalchemy import extract, func
 import json
 from io import BytesIO
+import calendar
 
 from extensions import db
 from models.Transaction import Transaction
@@ -27,7 +27,7 @@ def create_transaction(data):
 
         transaction = Transaction(
             description=data["description"],
-            amount=data["amount"],
+            amount=round(data["amount"], 2),
             type=transaction_type,
             date=data["date"],
             user_id=current_user.id,
@@ -49,12 +49,14 @@ def import_transactions_json(file):
     transactions_json = json.load(file)
 
     for item in transactions_json:
-        if not (
-            item.get["description"]
-            and item.get["amount"]
-            and item.get["type"]
-            and item.get["date"]
-            and item.get["category_name"]
+        if not all(
+            [
+                item.get("description")
+                and item.get("amount")
+                and item.get("type")
+                and item.get("date")
+                and item.get("category_name")
+            ]
         ):
             return {"message": "Invalid json items"}, 400
 
@@ -67,7 +69,7 @@ def import_transactions_json(file):
 
         transaction = Transaction(
             description=item["description"],
-            amount=item["amount"],
+            amount=round(item["amount"], 2),
             type=transaction_type,
             date=item["date"],
             user_id=current_user.id,
@@ -82,37 +84,20 @@ def import_transactions_json(file):
 
 
 def get_transactions():
-    transactions = Transaction.query.filter(
-        Transaction.user_id == current_user.id
-    ).all()
+    transactions = (
+        Transaction.query.order_by(Transaction.date.desc())
+        .filter(Transaction.user_id == current_user.id)
+        .all()
+    )
 
     if not transactions:
         return ({"message": "Transactions not found"}), 404
-
-    total_expense = (
-        db.session.query(func.sum(Transaction.amount))
-        .filter(Transaction.user_id == current_user.id, Transaction.type == "despesa")
-        .scalar()
-    ) or 0
-
-    total_income = (
-        db.session.query(func.sum(Transaction.amount))
-        .filter(Transaction.user_id == current_user.id, Transaction.type == "receita")
-        .scalar()
-    ) or 0
-
-    # if not total_expense:
-    #     total_expense = 0
-    # if not total_income:
-    #     total_income = 0
-
-    balance = total_income - total_expense
 
     all_transactions = [
         {
             "id": t.id,
             "description": t.description,
-            "amount": t.amount,
+            "amount": round(t.amount, 2),
             "type": t.type,
             "date": t.date,
             "user_id": t.user_id,
@@ -122,10 +107,44 @@ def get_transactions():
         for t in transactions
     ]
 
-    return {
-        "Transações": all_transactions,
-        "Totais": {"Despesa": total_expense, "Receita": total_income, "Saldo": balance},
-    }, 200
+    return {"Transações": all_transactions}, 200
+
+
+def get_balance():
+    total_balance = (
+        db.session.query(
+            extract("year", Transaction.date).label("year"),
+            extract("month", Transaction.date).label("month"),
+            func.sum(Transaction.amount)
+            .filter(
+                Transaction.user_id == current_user.id, Transaction.type == "despesa"
+            )
+            .label("total_expense"),
+            func.sum(Transaction.amount)
+            .filter(
+                Transaction.user_id == current_user.id, Transaction.type == "receita"
+            )
+            .label("total_income"),
+        )
+        .group_by(
+            extract("year", Transaction.date),
+            extract("month", Transaction.date),
+        )
+        .order_by(extract("year", Transaction.date), extract("month", Transaction.date))
+    )
+
+    result = [
+        {
+            "Ano": int(b.year),
+            "Mês": calendar.month_name[int(b.month)],
+            "Despesas do mês": round((b.total_expense or 0), 2),
+            "Receita do mês": round((b.total_income or 0), 2),
+            "Saldo atual": round((b.total_income or 0) - (b.total_expense or 0), 2),
+        }
+        for b in total_balance
+    ]
+
+    return result, 200
 
 
 def export_transactions_json():
@@ -139,7 +158,7 @@ def export_transactions_json():
     all_transactions = [
         {
             "description": t.description,
-            "amount": t.amount,
+            "amount": round(t.amount, 2),
             "type": t.type,
             "date": t.date.strftime("%d-%m-%Y"),
             "category_name": t.category.name,
@@ -185,7 +204,7 @@ def transaction_update(data, transaction_id):
             category_id = transaction.category_id
 
         transaction.description = data.get("description", transaction.description)
-        transaction.amount = data.get("amount", transaction.amount)
+        transaction.amount = round(data.get("amount", transaction.amount), 2)
         transaction.type = data.get("type", transaction.type)
         transaction.date = data.get("date", transaction.date)
         transaction.category_id = category_id

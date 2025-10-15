@@ -3,6 +3,7 @@ from flask_login import login_required
 
 from services.transaction_services import (
     create_transaction,
+    get_balance,
     import_transactions_json,
     get_transactions,
     export_transactions_json,
@@ -37,6 +38,14 @@ def import_transactions():
 @login_required
 def transactions():
     response, status = get_transactions()
+
+    return jsonify(response), status
+
+
+@transactions_bp.route("/balance", methods=["GET"])
+@login_required
+def transactions_balance():
+    response, status = get_balance()
 
     return jsonify(response), status
 
