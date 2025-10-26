@@ -1,9 +1,8 @@
 from flask import request, jsonify, Blueprint
-from flask_login import login_required
+from flask_jwt_extended import jwt_required
 
 from services.transaction_services import (
     create_transaction,
-    get_balance,
     import_transactions_json,
     get_transactions,
     export_transactions_json,
@@ -15,7 +14,7 @@ transactions_bp = Blueprint("transactions", __name__, url_prefix="/api/transacti
 
 
 @transactions_bp.route("/add", methods=["POST"])
-@login_required
+@jwt_required()
 def add_transactions():
     data = request.json
 
@@ -25,7 +24,7 @@ def add_transactions():
 
 
 @transactions_bp.route("/add/import", methods=["POST"])
-@login_required
+@jwt_required()
 def import_transactions():
     file = request.files["file"]
 
@@ -35,23 +34,25 @@ def import_transactions():
 
 
 @transactions_bp.route("/", methods=["GET"])
-@login_required
+@jwt_required()
 def transactions():
-    response, status = get_transactions()
+    params = request.args
+
+    response, status = get_transactions(params)
 
     return jsonify(response), status
 
 
-@transactions_bp.route("/balance", methods=["GET"])
-@login_required
-def transactions_balance():
-    response, status = get_balance()
+# @transactions_bp.route("/balance", methods=["GET"])
+# @login_required
+# def transactions_balance():
+#     response, status = get_balance()
 
-    return jsonify(response), status
+#     return jsonify(response), status
 
 
 @transactions_bp.route("/export", methods=["GET"])
-@login_required
+@jwt_required()
 def export_transactions():
     response, status = export_transactions_json()
 
@@ -59,7 +60,7 @@ def export_transactions():
 
 
 @transactions_bp.route("/update/<int:transaction_id>", methods=["PUT"])
-@login_required
+@jwt_required
 def update_transaction(transaction_id):
     data = request.json
 
@@ -69,7 +70,7 @@ def update_transaction(transaction_id):
 
 
 @transactions_bp.route("/delete/<int:transaction_id>", methods=["DELETE"])
-@login_required
+@jwt_required()
 def delete_transaction(transaction_id):
     response, status = transaction_delete(transaction_id)
 

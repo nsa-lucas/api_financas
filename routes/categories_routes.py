@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from flask_login import login_required
+from flask_jwt_extended import jwt_required
 
 from services.category_services import (
     get_categories,
@@ -12,7 +12,7 @@ categories_bp = Blueprint("categories", __name__, url_prefix="/api/categories")
 
 
 @categories_bp.route("/", methods=["GET"])
-@login_required
+@jwt_required()
 def categories():
     response, status = get_categories()
 
@@ -20,7 +20,7 @@ def categories():
 
 
 @categories_bp.route("/add", methods=["POST"])
-@login_required
+@jwt_required()
 def add_category():
     data = request.json
 
@@ -30,7 +30,7 @@ def add_category():
 
 
 @categories_bp.route("/update/<int:category_id>", methods=["PUT"])
-@login_required
+@jwt_required()
 def update_category(category_id):
     data = request.json
 
@@ -40,7 +40,7 @@ def update_category(category_id):
 
 
 @categories_bp.route("/delete/<int:category_id>", methods=["DELETE"])
-@login_required
+@jwt_required()
 def delete_category(category_id):
     response, status = delete_category_unused(category_id)
 

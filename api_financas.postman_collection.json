@@ -17,19 +17,84 @@
 					},
 					"request": {
 						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTQ4MDk1NywianRpIjoiMzk0YzQ5NDgtN2ViNi00MTk2LTg3MTgtNTE4NGVkY2I4ZTU0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUxMDkyYzcxLTM2OGQtNDJkNy1hZjQ2LTUwZTI0MmZmNmFhOSIsIm5iZiI6MTc2MTQ4MDk1NywiY3NyZiI6IjA2NWFjNTE4LWY4YTAtNDY1Yy1iMDRiLWQ0MmM4NWUyMTc2ZCIsImV4cCI6MTc2MTQ4MTg1N30.iURb0fe4HeyDG3uHTYARDyXMFXjFUHsfjdCwwl0MtJc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Compra de TV\",\n    \"value\": 2500,\n    \"description\": \"Compra a vistade uma TV\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/transactions/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "category_name",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "despesa",
+									"disabled": true
+								},
+								{
+									"key": "year",
+									"value": "2025",
+									"disabled": true
+								},
+								{
+									"key": "date_by_desc",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "amount_order",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "export transactions json",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"title\": \"Compra de TV\",\n    \"value\": 2500,\n    \"description\": \"Compra a vistade uma TV\"\n}"
 						},
 						"url": {
-							"raw": "{{base_url}}/api/transactions",
+							"raw": "{{base_url}}/api/transactions/export",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"api",
-								"transactions"
+								"transactions",
+								"export"
 							]
 						}
 					},
@@ -42,7 +107,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"description\": \"salario de nov\",\n    \"amount\": 3000,\n    \"type\": \"receita\",\n    \"date\": \"08-11-2025\",\n    \"category_name\": \"salario\"\n}",
+							"raw": "    {\"description\": \"Venda de celular usado\", \"amount\": 800.00, \"type\": \"despesa\", \"date\": \"10-01-2025\", \"category_name\": \"Vendas\"}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -64,6 +129,37 @@
 					"response": []
 				},
 				{
+					"name": "import transactions json",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"description": "file",
+									"type": "file",
+									"src": "/home/lucas/dev/api_controle_financas/transactions.json"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/transactions/add/import",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"add",
+								"import"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "delete transaction",
 					"request": {
 						"method": "DELETE",
@@ -73,7 +169,7 @@
 							"raw": "{\n    \"title\": \"Compra de TV\",\n    \"value\": 2500,\n    \"description\": \"Compra a vistade uma TV\"\n}"
 						},
 						"url": {
-							"raw": "{{base_url}}/api/transactions/delete/1",
+							"raw": "{{base_url}}/api/transactions/delete/11",
 							"host": [
 								"{{base_url}}"
 							],
@@ -81,7 +177,7 @@
 								"api",
 								"transactions",
 								"delete",
-								"1"
+								"11"
 							]
 						}
 					},
@@ -94,7 +190,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"category_name\":\"assinatura\"\n}",
+							"raw": "{\n    \"amount\":3500.5142\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -102,7 +198,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/api/transactions/update/1",
+							"raw": "{{base_url}}/api/transactions/update/102",
 							"host": [
 								"{{base_url}}"
 							],
@@ -110,7 +206,7 @@
 								"api",
 								"transactions",
 								"update",
-								"1"
+								"102"
 							]
 						}
 					},
@@ -128,7 +224,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"name example\",\n    \"email\": \"user@example.com\",\n    \"password\": \"senha1234\"\n}",
+							"raw": "{\n    \"name\":\"name example\",\n    \"email\": \"user@aaaaa.com\",\n    \"password\": \"senha1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -156,7 +252,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"name update\",\n    \"email\":\"user@eupdate.com\",\n    \"password\":\"senha1234update\"\n}",
+							"raw": "{\n    \"name\":\"name update\",\n    \"email\":\"user@update.com\",\n    \"password\":\"senha1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -256,6 +352,31 @@
 								"api",
 								"users",
 								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "protected",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTQ4MDk1NywianRpIjoiMzk0YzQ5NDgtN2ViNi00MTk2LTg3MTgtNTE4NGVkY2I4ZTU0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUxMDkyYzcxLTM2OGQtNDJkNy1hZjQ2LTUwZTI0MmZmNmFhOSIsIm5iZiI6MTc2MTQ4MDk1NywiY3NyZiI6IjA2NWFjNTE4LWY4YTAtNDY1Yy1iMDRiLWQ0MmM4NWUyMTc2ZCIsImV4cCI6MTc2MTQ4MTg1N30.iURb0fe4HeyDG3uHTYARDyXMFXjFUHsfjdCwwl0MtJc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/users/protected",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"protected"
 							]
 						}
 					},

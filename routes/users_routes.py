@@ -1,5 +1,5 @@
 from flask import request, jsonify, Blueprint
-from flask_login import login_required, logout_user
+from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 
 from services.user_services import (
     create_user,
@@ -7,6 +7,8 @@ from services.user_services import (
     delete_user_all,
     update_user_data,
 )
+
+from extensions import blacklist
 
 users_bp = Blueprint("users", __name__, url_prefix="/api/users")
 
@@ -23,7 +25,7 @@ def add_user():
 # ROTA PARA DELETAR USUARIO
 # OBS>> AO DELETAR UM USUARIO, DEVE-SE DELETAR TAMBÉM TODAS AS TRANSAÇÕES E CATEGORIAS DESSE USUARIO
 @users_bp.route("/delete", methods=["DELETE"])
-@login_required
+@jwt_required()
 def delete_user():
     data = request.json
 
@@ -33,7 +35,7 @@ def delete_user():
 
 
 @users_bp.route("/update", methods=["PUT"])
-@login_required
+@jwt_required()
 def update_user():
     data = request.json
 
@@ -52,8 +54,23 @@ def login():
 
 
 @users_bp.route("/logout", methods=["POST"])
-@login_required
+@jwt_required()
 def logout():
-    logout_user()
-
+    jti = get_jwt()["jti"]
+    blacklist.add(jti)
     return jsonify({"message": "Exiting..."})
+
+
+@users_bp.route("/protected", methods=["GET"])
+@jwt_required()
+def protected():
+    current_user = get_jwt_identity()
+    return jsonify(
+        {
+            "message": "You are authenticated",
+            "user": {
+                "userId": current_user.id,
+                "email": current_user.email,
+            },
+        }
+    ), 200

@@ -1,16 +1,19 @@
 from flask import send_file
-from flask_login import current_user
-from sqlalchemy import extract, func
+from sqlalchemy import extract
 import json
 from io import BytesIO
-import calendar
+from flask_jwt_extended import get_jwt_identity
+
 
 from extensions import db
+from models.Category import Category
 from models.Transaction import Transaction
 from .category_services import get_category
 
 
 def create_transaction(data):
+    current_user = get_jwt_identity()
+
     if (
         data.get("description")
         and data.get("amount")
@@ -30,7 +33,7 @@ def create_transaction(data):
             amount=round(data["amount"], 2),
             type=transaction_type,
             date=data["date"],
-            user_id=current_user.id,
+            user_id=current_user,
             category_id=category_id,
         )
 
@@ -43,6 +46,8 @@ def create_transaction(data):
 
 
 def import_transactions_json(file):
+    current_user = get_jwt_identity()
+
     if file.content_type != "application/json":
         return {"message": "Invalid json file"}, 400
 
@@ -72,7 +77,7 @@ def import_transactions_json(file):
             amount=round(item["amount"], 2),
             type=transaction_type,
             date=item["date"],
-            user_id=current_user.id,
+            user_id=current_user,
             category_id=category_id,
         )
 
@@ -83,12 +88,44 @@ def import_transactions_json(file):
     return {"message": "Transactions list import successfully"}, 201
 
 
-def get_transactions():
-    transactions = (
-        Transaction.query.order_by(Transaction.date.desc())
-        .filter(Transaction.user_id == current_user.id)
-        .all()
+def get_transactions(params):
+    current_user = get_jwt_identity()
+
+    limit = params.get("limit", type=int)
+    category_name = params.get("category_name", type=str)
+    transactions_type = params.get("type", type=str)
+    transactions_year = params.get("year", type=str)
+    order_by_date = params.get("date_by_desc", type=str)
+    order_by_amount = params.get("amount_by_desc", type=str)
+
+    if not limit:
+        limit = 15
+
+    transactions_by_user = Transaction.query.filter(
+        Transaction.user_id == current_user,
     )
+
+    if order_by_date == "desc":
+        transactions_by_user = transactions_by_user.order_by(Transaction.date.desc())
+
+    if order_by_amount == "desc":
+        transactions_by_user = transactions_by_user.order_by(Transaction.amount.desc())
+
+    if category_name:
+        transactions_by_user = transactions_by_user.join(Category).filter(
+            Category.name.ilike(f"%{category_name}%")
+        )
+    if transactions_type:
+        transactions_by_user = transactions_by_user.filter(
+            Transaction.type.ilike(f"%{transactions_type}%")
+        )
+
+    if transactions_year:
+        transactions_by_user = transactions_by_user.filter(
+            extract("year", Transaction.date) == transactions_year
+        )
+
+    transactions = transactions_by_user.limit(limit).all()
 
     if not transactions:
         return ({"message": "Transactions not found"}), 404
@@ -99,7 +136,7 @@ def get_transactions():
             "description": t.description,
             "amount": round(t.amount, 2),
             "type": t.type,
-            "date": t.date,
+            "date": t.date.strftime("%d/%m/%Y"),
             "user_id": t.user_id,
             "category_name": t.category.name,
             "category_id": t.category.id,
@@ -107,50 +144,13 @@ def get_transactions():
         for t in transactions
     ]
 
-    return {"Transações": all_transactions}, 200
-
-
-def get_balance():
-    total_balance = (
-        db.session.query(
-            extract("year", Transaction.date).label("year"),
-            extract("month", Transaction.date).label("month"),
-            func.sum(Transaction.amount)
-            .filter(
-                Transaction.user_id == current_user.id, Transaction.type == "despesa"
-            )
-            .label("total_expense"),
-            func.sum(Transaction.amount)
-            .filter(
-                Transaction.user_id == current_user.id, Transaction.type == "receita"
-            )
-            .label("total_income"),
-        )
-        .group_by(
-            extract("year", Transaction.date),
-            extract("month", Transaction.date),
-        )
-        .order_by(extract("year", Transaction.date), extract("month", Transaction.date))
-    )
-
-    result = [
-        {
-            "Ano": int(b.year),
-            "Mês": calendar.month_name[int(b.month)],
-            "Despesas do mês": round((b.total_expense or 0), 2),
-            "Receita do mês": round((b.total_income or 0), 2),
-            "Saldo atual": round((b.total_income or 0) - (b.total_expense or 0), 2),
-        }
-        for b in total_balance
-    ]
-
-    return result, 200
+    return (all_transactions), 200
 
 
 def export_transactions_json():
-    transactions = Transaction.query.filter(
-        Transaction.user_id == current_user.id
-    ).all()
+    current_user = get_jwt_identity()
+
+    transactions = Transaction.query.filter(Transaction.user_id == current_user).all()
 
     if not transactions:
         return ({"message": "Transactions not found"}), 404
@@ -182,11 +182,13 @@ def export_transactions_json():
 
 
 def transaction_update(data, transaction_id):
+    current_user = get_jwt_identity()
+
     if not data:
         return {"message": "No data changed"}, 400
 
     transaction = Transaction.query.filter(
-        Transaction.id == transaction_id, Transaction.user_id == current_user.id
+        Transaction.id == transaction_id, Transaction.user_id == current_user
     ).first()  # RETORNA TRANSAÇÃO DO USUARIO LOGADO
 
     # VERIFICANDO SE TRANSAÇÃO EXISTE
@@ -217,8 +219,10 @@ def transaction_update(data, transaction_id):
 
 
 def transaction_delete(transaction_id):
+    current_user = get_jwt_identity()
+
     transaction = Transaction.query.filter(
-        Transaction.id == transaction_id, Transaction.user_id == current_user.id
+        Transaction.id == transaction_id, Transaction.user_id == current_user
     ).first()
 
     if transaction and transaction.user_id == current_user.id:

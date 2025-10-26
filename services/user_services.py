@@ -1,4 +1,5 @@
-from flask_login import current_user, login_user
+from flask_jwt_extended import create_access_token, get_jwt_identity
+from email_validator import validate_email
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from extensions import db
@@ -10,12 +11,17 @@ def create_user(data):
     if data.get("name") and data.get("email") and data.get("password"):
         email = data["email"].strip().lower()
 
+        verify_email = validate_email(email)
+
+        if not verify_email:
+            return {"message": "Email format invalid"}, 400
+
         # VERIFICANDO SE EMAIL JA EXISTE
         if User.query.filter(User.email == email).first():
             return {"message": "Email already exists"}, 409
 
         # CRIPTOGRAFANDO SENHA
-        if len(data["password"]) <= 8:
+        if len(data["password"]) < 8:
             return {"message": "Password must contain 8 characters or more"}, 400
 
         hashed_password = generate_password_hash(data["password"], "pbkdf2:sha256", 8)
@@ -32,7 +38,7 @@ def create_user(data):
 
 # PARA DELETAR O USUARIO, DEVE SER DELETAR ANTES TODAS AS TRANSAÇÕES E CATEGORIAS DESSE USUARIO
 def delete_user_all(data):
-    user = User.query.get(current_user.id)
+    user = User.query.get(get_jwt_identity().id)
 
     if check_password_hash(user.password, data["password"]):
         db.session.delete(user)
@@ -53,7 +59,9 @@ def update_user_data(data):
     email = data.get("email")
     password = data.get("password")
 
-    user = User.query.get(current_user.id)
+    current_user = get_jwt_identity()
+
+    user = User.query.get(current_user)
 
     if name:
         user.name = name
@@ -78,6 +86,12 @@ def update_user_data(data):
 
 def user_login(data):
     email = data["email"]
+
+    verify_email = validate_email(email, check_deliverability=False)
+
+    if not verify_email:
+        return {"message": "Email format invalid"}, 400
+
     user = User.query.filter(User.email == email).first()
 
     if not user:
@@ -86,8 +100,10 @@ def user_login(data):
     password_check = check_password_hash(user.password, data["password"])
 
     if password_check:
-        login_user(user)
+        token = create_access_token(identity=[user.id, user.email])
 
-        return {"message": "Authorized login"}, 202
+        response = {"token": token, "user": {"id": user.id, "email": user.email}}
+
+        return {"message": "Authorized login", "data": response}, 202
 
     return {"message": "Email or password invalid"}, 400
