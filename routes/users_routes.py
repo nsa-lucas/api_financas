@@ -1,6 +1,7 @@
 from flask import request, jsonify, Blueprint
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 
+from models.User import User
 from services.user_services import (
     create_user,
     user_login,
@@ -53,24 +54,23 @@ def login():
     return jsonify(response), status
 
 
+@users_bp.route("/protected", methods=["GET"])
+@jwt_required()
+def protected():
+    current_user = get_jwt_identity()
+
+    user = User.query.get(current_user)
+    if not user:
+        return jsonify({"message": "User not found"}), 404
+
+    return jsonify(
+        {"message": "Token accepted", "user": {"userId": user.id, "email": user.email}}
+    ), 200
+
+
 @users_bp.route("/logout", methods=["POST"])
 @jwt_required()
 def logout():
     jti = get_jwt()["jti"]
     blacklist.add(jti)
     return jsonify({"message": "Exiting..."})
-
-
-@users_bp.route("/protected", methods=["GET"])
-@jwt_required()
-def protected():
-    current_user = get_jwt_identity()
-    return jsonify(
-        {
-            "message": "You are authenticated",
-            "user": {
-                "userId": current_user.id,
-                "email": current_user.email,
-            },
-        }
-    ), 200

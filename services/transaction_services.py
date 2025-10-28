@@ -91,22 +91,22 @@ def import_transactions_json(file):
 def get_transactions(params):
     current_user = get_jwt_identity()
 
+    page = params.get("page", type=int)
     limit = params.get("limit", type=int)
     category_name = params.get("category_name", type=str)
     transactions_type = params.get("type", type=str)
     transactions_year = params.get("year", type=str)
-    order_by_date = params.get("date_by_desc", type=str)
+    # order_by_date = params.get("date_by_desc", type=str)
     order_by_amount = params.get("amount_by_desc", type=str)
 
     if not limit:
-        limit = 15
+        limit = 8
 
-    transactions_by_user = Transaction.query.filter(
-        Transaction.user_id == current_user,
+    transactions_by_user = (
+        Transaction.query.filter(Transaction.user_id == current_user)
+        .order_by(Transaction.date.desc())
+        .paginate(page=page, per_page=limit, max_per_page=15)
     )
-
-    if order_by_date == "desc":
-        transactions_by_user = transactions_by_user.order_by(Transaction.date.desc())
 
     if order_by_amount == "desc":
         transactions_by_user = transactions_by_user.order_by(Transaction.amount.desc())
@@ -125,12 +125,10 @@ def get_transactions(params):
             extract("year", Transaction.date) == transactions_year
         )
 
-    transactions = transactions_by_user.limit(limit).all()
+    if not transactions_by_user:
+        return {"message": "Transactions not found"}, 404
 
-    if not transactions:
-        return ({"message": "Transactions not found"}), 404
-
-    all_transactions = [
+    transactions = [
         {
             "id": t.id,
             "description": t.description,
@@ -141,10 +139,10 @@ def get_transactions(params):
             "category_name": t.category.name,
             "category_id": t.category.id,
         }
-        for t in transactions
+        for t in transactions_by_user
     ]
 
-    return (all_transactions), 200
+    return (transactions), 200
 
 
 def export_transactions_json():
@@ -225,7 +223,7 @@ def transaction_delete(transaction_id):
         Transaction.id == transaction_id, Transaction.user_id == current_user
     ).first()
 
-    if transaction and transaction.user_id == current_user.id:
+    if transaction:
         db.session.delete(transaction)
         db.session.commit()
 

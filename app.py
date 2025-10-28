@@ -8,13 +8,14 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 db.init_app(app)
-jwt.init_app(app)
 migrate.init_app(app, db)
 cors.init_app(
     app,
-    supports_credentials=True,
-    origins=["http://localhost:4200"],
+    resources={r"/api/*": {"origins": "http://localhost:4200"}},
+    allow_headers=["Content-Type", "Authorization"],
+    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 )
+jwt.init_app(app)
 register_routes(app)
 
 

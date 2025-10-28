@@ -100,7 +100,7 @@ def user_login(data):
     password_check = check_password_hash(user.password, data["password"])
 
     if password_check:
-        token = create_access_token(identity={"user_id": user.id, "email": user.email})
+        token = create_access_token(identity=user.id)
 
         response = {"token": token, "user": {"id": user.id, "email": user.email}}
 

@@ -1,422 +1,702 @@
 [
   {
-    "description": "Salário mensal",
-    "amount": 4500.0,
-    "type": "receita",
-    "date": "03-01-2025",
-    "category_name": "Salário"
-  },
-  {
-    "description": "Aluguel apartamento",
-    "amount": 1500.0,
+    "description": "Cursos online",
+    "amount": 1477.53,
     "type": "despesa",
-    "date": "05-01-2025",
-    "category_name": "Moradia"
+    "date": "2025-01-23",
+    "category_name": "Educação"
   },
   {
-    "description": "Supermercado",
-    "amount": 350.0,
+    "description": "Academia",
+    "amount": 1045.85,
     "type": "despesa",
-    "date": "10-01-2025",
-    "category_name": "Alimentação"
+    "date": "2025-01-23",
+    "category_name": "Saúde"
   },
   {
-    "description": "Freelance Design",
-    "amount": 800.0,
+    "description": "Academia",
+    "amount": 103.19,
+    "type": "despesa",
+    "date": "2025-01-25",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 154.71,
+    "type": "despesa",
+    "date": "2025-01-16",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Netflix",
+    "amount": 1211.28,
+    "type": "despesa",
+    "date": "2025-01-12",
+    "category_name": "Lazer"
+  },
+  {
+    "description": "Freelance design",
+    "amount": 1740.67,
     "type": "receita",
-    "date": "12-01-2025",
+    "date": "2025-01-06",
     "category_name": "Freelance"
   },
   {
-    "description": "Conta de luz",
-    "amount": 120.0,
+    "description": "Farmácia",
+    "amount": 797.52,
     "type": "despesa",
-    "date": "15-01-2025",
-    "category_name": "Contas"
+    "date": "2025-01-21",
+    "category_name": "Saúde"
   },
   {
-    "description": "Conta de água",
-    "amount": 80.0,
+    "description": "Netflix",
+    "amount": 1189.65,
     "type": "despesa",
-    "date": "16-01-2025",
+    "date": "2025-01-22",
+    "category_name": "Lazer"
+  },
+  {
+    "description": "Lanche",
+    "amount": 834.57,
+    "type": "despesa",
+    "date": "2025-01-04",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Lanche",
+    "amount": 1402.74,
+    "type": "despesa",
+    "date": "2025-01-21",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 1136.39,
+    "type": "despesa",
+    "date": "2025-02-06",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Conta de luz",
+    "amount": 475.56,
+    "type": "despesa",
+    "date": "2025-02-02",
     "category_name": "Contas"
   },
   {
     "description": "Transporte público",
-    "amount": 200.0,
+    "amount": 824.34,
     "type": "despesa",
-    "date": "20-01-2025",
+    "date": "2025-02-21",
     "category_name": "Transporte"
-  },
-  {
-    "description": "Venda de livros usados",
-    "amount": 150.0,
-    "type": "receita",
-    "date": "22-01-2025",
-    "category_name": "Venda"
-  },
-  {
-    "description": "Assinatura Netflix",
-    "amount": 45.0,
-    "type": "despesa",
-    "date": "25-01-2025",
-    "category_name": "Lazer"
-  },
-  {
-    "description": "Restaurante",
-    "amount": 120.0,
-    "type": "despesa",
-    "date": "28-01-2025",
-    "category_name": "Alimentação"
-  },
-  {
-    "description": "Salário mensal",
-    "amount": 4500.0,
-    "type": "receita",
-    "date": "03-02-2025",
-    "category_name": "Salário"
-  },
-  {
-    "description": "Aluguel apartamento",
-    "amount": 1500.0,
-    "type": "despesa",
-    "date": "05-02-2025",
-    "category_name": "Moradia"
-  },
-  {
-    "description": "Supermercado",
-    "amount": 400.0,
-    "type": "despesa",
-    "date": "10-02-2025",
-    "category_name": "Alimentação"
-  },
-  {
-    "description": "Freelance Programação",
-    "amount": 1200.0,
-    "type": "receita",
-    "date": "12-02-2025",
-    "category_name": "Freelance"
-  },
-  {
-    "description": "Conta de luz",
-    "amount": 130.0,
-    "type": "despesa",
-    "date": "15-02-2025",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Conta de internet",
-    "amount": 100.0,
-    "type": "despesa",
-    "date": "16-02-2025",
-    "category_name": "Contas"
   },
   {
     "description": "Transporte público",
-    "amount": 180.0,
+    "amount": 516.33,
     "type": "despesa",
-    "date": "20-02-2025",
+    "date": "2025-02-02",
     "category_name": "Transporte"
   },
   {
-    "description": "Venda de roupas usadas",
-    "amount": 250.0,
-    "type": "receita",
-    "date": "22-02-2025",
-    "category_name": "Venda"
+    "description": "Combustível",
+    "amount": 1337.53,
+    "type": "despesa",
+    "date": "2025-02-13",
+    "category_name": "Transporte"
   },
   {
-    "description": "Assinatura Spotify",
-    "amount": 30.0,
+    "description": "Lanche",
+    "amount": 1142.04,
     "type": "despesa",
-    "date": "25-02-2025",
-    "category_name": "Lazer"
+    "date": "2025-02-09",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Conta de luz",
+    "amount": 131.28,
+    "type": "despesa",
+    "date": "2025-02-10",
+    "category_name": "Contas"
+  },
+  {
+    "description": "Consulta médica",
+    "amount": 649.33,
+    "type": "despesa",
+    "date": "2025-02-07",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Conta de luz",
+    "amount": 142.08,
+    "type": "despesa",
+    "date": "2025-02-10",
+    "category_name": "Contas"
+  },
+  {
+    "description": "Academia",
+    "amount": 849.56,
+    "type": "despesa",
+    "date": "2025-02-26",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Freelance design",
+    "amount": 5845.3,
+    "type": "receita",
+    "date": "2025-03-26",
+    "category_name": "Freelance"
+  },
+  {
+    "description": "Aluguel apartamento",
+    "amount": 194.09,
+    "type": "despesa",
+    "date": "2025-03-01",
+    "category_name": "Moradia"
+  },
+  {
+    "description": "Freelance design",
+    "amount": 505.1,
+    "type": "receita",
+    "date": "2025-03-23",
+    "category_name": "Freelance"
+  },
+  {
+    "description": "Combustível",
+    "amount": 1103.46,
+    "type": "despesa",
+    "date": "2025-03-01",
+    "category_name": "Transporte"
   },
   {
     "description": "Cinema",
-    "amount": 50.0,
+    "amount": 184.48,
     "type": "despesa",
-    "date": "28-02-2025",
+    "date": "2025-03-19",
     "category_name": "Lazer"
   },
   {
-    "description": "Salário mensal",
-    "amount": 4500.0,
-    "type": "receita",
-    "date": "03-03-2024",
-    "category_name": "Salário"
-  },
-  {
-    "description": "Aluguel apartamento",
-    "amount": 1500.0,
+    "description": "Padaria",
+    "amount": 1248.36,
     "type": "despesa",
-    "date": "05-03-2024",
-    "category_name": "Moradia"
-  },
-  {
-    "description": "Supermercado",
-    "amount": 380.0,
-    "type": "despesa",
-    "date": "10-03-2024",
+    "date": "2025-03-09",
     "category_name": "Alimentação"
   },
   {
-    "description": "Freelance Fotografia",
-    "amount": 700.0,
-    "type": "receita",
-    "date": "12-03-2024",
-    "category_name": "Freelance"
-  },
-  {
-    "description": "Conta de luz",
-    "amount": 125.0,
+    "description": "Netflix",
+    "amount": 767.04,
     "type": "despesa",
-    "date": "15-03-2024",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Conta de água",
-    "amount": 90.0,
-    "type": "despesa",
-    "date": "16-03-2024",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Transporte público",
-    "amount": 190.0,
-    "type": "despesa",
-    "date": "20-03-2024",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Venda de artesanato",
-    "amount": 300.0,
-    "type": "receita",
-    "date": "22-03-2024",
-    "category_name": "Venda"
-  },
-  {
-    "description": "Assinatura HBO Max",
-    "amount": 35.0,
-    "type": "despesa",
-    "date": "25-03-2024",
+    "date": "2025-03-06",
     "category_name": "Lazer"
   },
   {
-    "description": "Restaurante",
-    "amount": 100.0,
+    "description": "Lanche",
+    "amount": 1163.04,
     "type": "despesa",
-    "date": "28-03-2024",
+    "date": "2025-03-22",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Show",
+    "amount": 441.56,
+    "type": "despesa",
+    "date": "2025-03-25",
+    "category_name": "Lazer"
+  },
+  {
+    "description": "Lanche",
+    "amount": 1390.46,
+    "type": "despesa",
+    "date": "2025-03-22",
     "category_name": "Alimentação"
   },
   {
     "description": "Salário mensal",
-    "amount": 4400.0,
+    "amount": 5558.48,
     "type": "receita",
-    "date": "03-04-2023",
+    "date": "2025-04-14",
     "category_name": "Salário"
-  },
-  {
-    "description": "Aluguel apartamento",
-    "amount": 1450.0,
-    "type": "despesa",
-    "date": "05-04-2023",
-    "category_name": "Moradia"
-  },
-  {
-    "description": "Supermercado",
-    "amount": 370.0,
-    "type": "despesa",
-    "date": "10-04-2023",
-    "category_name": "Alimentação"
-  },
-  {
-    "description": "Freelance Marketing",
-    "amount": 900.0,
-    "type": "receita",
-    "date": "12-04-2023",
-    "category_name": "Freelance"
-  },
-  {
-    "description": "Conta de luz",
-    "amount": 115.0,
-    "type": "despesa",
-    "date": "15-04-2023",
-    "category_name": "Contas"
   },
   {
     "description": "Conta de internet",
-    "amount": 95.0,
+    "amount": 1113.8,
     "type": "despesa",
-    "date": "16-04-2023",
+    "date": "2025-04-25",
     "category_name": "Contas"
   },
   {
-    "description": "Transporte público",
-    "amount": 185.0,
+    "description": "Academia",
+    "amount": 230.92,
     "type": "despesa",
-    "date": "20-04-2023",
-    "category_name": "Transporte"
+    "date": "2025-04-20",
+    "category_name": "Saúde"
   },
   {
-    "description": "Venda de livros",
-    "amount": 200.0,
+    "description": "Freelance design",
+    "amount": 1490.09,
     "type": "receita",
-    "date": "22-04-2023",
-    "category_name": "Venda"
-  },
-  {
-    "description": "Assinatura Disney+",
-    "amount": 30.0,
-    "type": "despesa",
-    "date": "25-04-2023",
-    "category_name": "Lazer"
-  },
-  {
-    "description": "Cinema",
-    "amount": 60.0,
-    "type": "despesa",
-    "date": "28-04-2023",
-    "category_name": "Lazer"
-  },
-  {
-    "description": "Salário mensal",
-    "amount": 4500.0,
-    "type": "receita",
-    "date": "03-05-2025",
-    "category_name": "Salário"
-  },
-  {
-    "description": "Aluguel apartamento",
-    "amount": 1500.0,
-    "type": "despesa",
-    "date": "05-05-2025",
-    "category_name": "Moradia"
-  },
-  {
-    "description": "Supermercado",
-    "amount": 360.0,
-    "type": "despesa",
-    "date": "10-05-2025",
-    "category_name": "Alimentação"
-  },
-  {
-    "description": "Freelance Tradução",
-    "amount": 500.0,
-    "type": "receita",
-    "date": "12-05-2025",
+    "date": "2025-04-03",
     "category_name": "Freelance"
   },
   {
-    "description": "Conta de luz",
-    "amount": 120.0,
+    "description": "Lanche",
+    "amount": 182.13,
     "type": "despesa",
-    "date": "15-05-2025",
+    "date": "2025-04-20",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 5485.6,
+    "type": "receita",
+    "date": "2025-04-02",
+    "category_name": "Salário"
+  },
+  {
+    "description": "Estacionamento",
+    "amount": 324.53,
+    "type": "despesa",
+    "date": "2025-04-20",
+    "category_name": "Transporte"
+  },
+  {
+    "description": "Estacionamento",
+    "amount": 1044.22,
+    "type": "despesa",
+    "date": "2025-04-04",
+    "category_name": "Transporte"
+  },
+  {
+    "description": "Viagem",
+    "amount": 1150.1,
+    "type": "despesa",
+    "date": "2025-04-20",
+    "category_name": "Lazer"
+  },
+  {
+    "description": "Manutenção veículo",
+    "amount": 1032.79,
+    "type": "despesa",
+    "date": "2025-04-02",
+    "category_name": "Transporte"
+  },
+  {
+    "description": "Livros",
+    "amount": 1201.37,
+    "type": "despesa",
+    "date": "2025-05-11",
+    "category_name": "Educação"
+  },
+  {
+    "description": "Consulta médica",
+    "amount": 35.08,
+    "type": "despesa",
+    "date": "2025-05-18",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Freelance tradução",
+    "amount": 2358.51,
+    "type": "receita",
+    "date": "2025-05-12",
+    "category_name": "Freelance"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 1338.87,
+    "type": "despesa",
+    "date": "2025-05-19",
+    "category_name": "Transporte"
+  },
+  {
+    "description": "Freelance design",
+    "amount": 2640.91,
+    "type": "receita",
+    "date": "2025-05-02",
+    "category_name": "Freelance"
+  },
+  {
+    "description": "Exames",
+    "amount": 1291.5,
+    "type": "despesa",
+    "date": "2025-05-24",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Conta de luz",
+    "amount": 265.95,
+    "type": "despesa",
+    "date": "2025-05-21",
     "category_name": "Contas"
+  },
+  {
+    "description": "Condomínio",
+    "amount": 599.31,
+    "type": "despesa",
+    "date": "2025-05-16",
+    "category_name": "Moradia"
+  },
+  {
+    "description": "Exames",
+    "amount": 102.68,
+    "type": "despesa",
+    "date": "2025-05-13",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Venda de roupas",
+    "amount": 4791.33,
+    "type": "receita",
+    "date": "2025-05-02",
+    "category_name": "Venda"
+  },
+  {
+    "description": "Consulta médica",
+    "amount": 1030.38,
+    "type": "despesa",
+    "date": "2025-06-23",
+    "category_name": "Saúde"
   },
   {
     "description": "Conta de água",
-    "amount": 85.0,
+    "amount": 1158.49,
     "type": "despesa",
-    "date": "16-05-2025",
+    "date": "2025-06-23",
     "category_name": "Contas"
   },
   {
-    "description": "Transporte público",
-    "amount": 195.0,
+    "description": "Açougue",
+    "amount": 293.53,
     "type": "despesa",
-    "date": "20-05-2025",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Venda de produtos digitais",
-    "amount": 400.0,
-    "type": "receita",
-    "date": "22-05-2025",
-    "category_name": "Venda"
-  },
-  {
-    "description": "Assinatura Netflix",
-    "amount": 45.0,
-    "type": "despesa",
-    "date": "25-05-2025",
-    "category_name": "Lazer"
-  },
-  {
-    "description": "Restaurante",
-    "amount": 110.0,
-    "type": "despesa",
-    "date": "28-05-2025",
+    "date": "2025-06-14",
     "category_name": "Alimentação"
   },
   {
-    "description": "Salário mensal",
-    "amount": 4500.0,
-    "type": "receita",
-    "date": "03-06-2023",
-    "category_name": "Salário"
-  },
-  {
-    "description": "Aluguel apartamento",
-    "amount": 1450.0,
+    "description": "Condomínio",
+    "amount": 59.3,
     "type": "despesa",
-    "date": "05-06-2023",
+    "date": "2025-06-10",
     "category_name": "Moradia"
   },
   {
-    "description": "Supermercado",
-    "amount": 390.0,
+    "description": "Condomínio",
+    "amount": 1231.5,
     "type": "despesa",
-    "date": "10-06-2023",
-    "category_name": "Alimentação"
+    "date": "2025-06-10",
+    "category_name": "Moradia"
   },
   {
-    "description": "Freelance Consultoria",
-    "amount": 1000.0,
-    "type": "receita",
-    "date": "12-06-2023",
-    "category_name": "Freelance"
-  },
-  {
-    "description": "Conta de luz",
-    "amount": 110.0,
+    "description": "Combustível",
+    "amount": 635.23,
     "type": "despesa",
-    "date": "15-06-2023",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Conta de internet",
-    "amount": 90.0,
-    "type": "despesa",
-    "date": "16-06-2023",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Transporte público",
-    "amount": 180.0,
-    "type": "despesa",
-    "date": "20-06-2023",
+    "date": "2025-06-08",
     "category_name": "Transporte"
   },
   {
-    "description": "Venda de artesanato",
-    "amount": 350.0,
+    "description": "Conta de celular",
+    "amount": 709.39,
+    "type": "despesa",
+    "date": "2025-06-11",
+    "category_name": "Contas"
+  },
+  {
+    "description": "Venda de produtos usados",
+    "amount": 5802.79,
     "type": "receita",
-    "date": "22-06-2023",
+    "date": "2025-06-10",
     "category_name": "Venda"
   },
   {
-    "description": "Assinatura Spotify",
-    "amount": 30.0,
+    "description": "Salário mensal",
+    "amount": 5586.81,
+    "type": "receita",
+    "date": "2025-06-01",
+    "category_name": "Salário"
+  },
+  {
+    "description": "Estacionamento",
+    "amount": 929.86,
     "type": "despesa",
-    "date": "25-06-2023",
+    "date": "2025-06-15",
+    "category_name": "Transporte"
+  },
+  {
+    "description": "Venda de roupas",
+    "amount": 1043.15,
+    "type": "receita",
+    "date": "2025-07-18",
+    "category_name": "Venda"
+  },
+  {
+    "description": "Freelance tradução",
+    "amount": 166.16,
+    "type": "receita",
+    "date": "2025-07-13",
+    "category_name": "Freelance"
+  },
+  {
+    "description": "Academia",
+    "amount": 1216.71,
+    "type": "despesa",
+    "date": "2025-07-10",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Combustível",
+    "amount": 764.15,
+    "type": "despesa",
+    "date": "2025-07-08",
+    "category_name": "Transporte"
+  },
+  {
+    "description": "Viagem",
+    "amount": 208.37,
+    "type": "despesa",
+    "date": "2025-07-07",
     "category_name": "Lazer"
   },
   {
-    "description": "Cinema",
-    "amount": 55.0,
+    "description": "Livros",
+    "amount": 929.73,
     "type": "despesa",
-    "date": "28-06-2023",
+    "date": "2025-07-01",
+    "category_name": "Educação"
+  },
+  {
+    "description": "Exames",
+    "amount": 1466.13,
+    "type": "despesa",
+    "date": "2025-07-19",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Conta de água",
+    "amount": 1391.1,
+    "type": "despesa",
+    "date": "2025-07-18",
+    "category_name": "Contas"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 5232.88,
+    "type": "receita",
+    "date": "2025-07-10",
+    "category_name": "Salário"
+  },
+  {
+    "description": "Conta de água",
+    "amount": 847.26,
+    "type": "despesa",
+    "date": "2025-07-16",
+    "category_name": "Contas"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 5367.75,
+    "type": "receita",
+    "date": "2025-08-02",
+    "category_name": "Salário"
+  },
+  {
+    "description": "Freelance programação",
+    "amount": 751.76,
+    "type": "receita",
+    "date": "2025-08-12",
+    "category_name": "Freelance"
+  },
+  {
+    "description": "Cursos online",
+    "amount": 246.59,
+    "type": "despesa",
+    "date": "2025-08-26",
+    "category_name": "Educação"
+  },
+  {
+    "description": "Condomínio",
+    "amount": 1488.99,
+    "type": "despesa",
+    "date": "2025-08-13",
+    "category_name": "Moradia"
+  },
+  {
+    "description": "Conta de luz",
+    "amount": 1486.64,
+    "type": "despesa",
+    "date": "2025-08-02",
+    "category_name": "Contas"
+  },
+  {
+    "description": "Aluguel apartamento",
+    "amount": 335.02,
+    "type": "despesa",
+    "date": "2025-08-07",
+    "category_name": "Moradia"
+  },
+  {
+    "description": "Exames",
+    "amount": 1067.13,
+    "type": "despesa",
+    "date": "2025-08-10",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Livros",
+    "amount": 816.45,
+    "type": "despesa",
+    "date": "2025-08-16",
+    "category_name": "Educação"
+  },
+  {
+    "description": "Lanche",
+    "amount": 1410.96,
+    "type": "despesa",
+    "date": "2025-08-14",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Venda de eletrônicos",
+    "amount": 5475.24,
+    "type": "receita",
+    "date": "2025-08-28",
+    "category_name": "Venda"
+  },
+  {
+    "description": "Spotify",
+    "amount": 907.32,
+    "type": "despesa",
+    "date": "2025-09-01",
     "category_name": "Lazer"
+  },
+  {
+    "description": "Condomínio",
+    "amount": 137.24,
+    "type": "despesa",
+    "date": "2025-09-17",
+    "category_name": "Moradia"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 4868.51,
+    "type": "receita",
+    "date": "2025-09-24",
+    "category_name": "Salário"
+  },
+  {
+    "description": "Freelance tradução",
+    "amount": 2048.32,
+    "type": "receita",
+    "date": "2025-09-11",
+    "category_name": "Freelance"
+  },
+  {
+    "description": "Conta de internet",
+    "amount": 607.16,
+    "type": "despesa",
+    "date": "2025-09-20",
+    "category_name": "Contas"
+  },
+  {
+    "description": "Combustível",
+    "amount": 588.38,
+    "type": "despesa",
+    "date": "2025-09-27",
+    "category_name": "Transporte"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 1875.94,
+    "type": "receita",
+    "date": "2025-09-21",
+    "category_name": "Salário"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 1203.88,
+    "type": "despesa",
+    "date": "2025-09-15",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Conta de celular",
+    "amount": 915.12,
+    "type": "despesa",
+    "date": "2025-09-20",
+    "category_name": "Contas"
+  },
+  {
+    "description": "Spotify",
+    "amount": 145.59,
+    "type": "despesa",
+    "date": "2025-09-07",
+    "category_name": "Lazer"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 2752.07,
+    "type": "receita",
+    "date": "2025-10-11",
+    "category_name": "Salário"
+  },
+  {
+    "description": "Consulta médica",
+    "amount": 166.86,
+    "type": "despesa",
+    "date": "2025-10-14",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Exames",
+    "amount": 640.9,
+    "type": "despesa",
+    "date": "2025-10-02",
+    "category_name": "Saúde"
+  },
+  {
+    "description": "Conta de internet",
+    "amount": 100.92,
+    "type": "despesa",
+    "date": "2025-10-18",
+    "category_name": "Contas"
+  },
+  {
+    "description": "Restaurante",
+    "amount": 1431.38,
+    "type": "despesa",
+    "date": "2025-10-11",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Viagem",
+    "amount": 613.77,
+    "type": "despesa",
+    "date": "2025-10-11",
+    "category_name": "Lazer"
+  },
+  {
+    "description": "Freelance design",
+    "amount": 1775.42,
+    "type": "receita",
+    "date": "2025-10-26",
+    "category_name": "Freelance"
+  },
+  {
+    "description": "Conta de celular",
+    "amount": 746.74,
+    "type": "despesa",
+    "date": "2025-10-05",
+    "category_name": "Contas"
+  },
+  {
+    "description": "Restaurante",
+    "amount": 1399.88,
+    "type": "despesa",
+    "date": "2025-10-19",
+    "category_name": "Alimentação"
+  },
+  {
+    "description": "Manutenção veículo",
+    "amount": 1407.21,
+    "type": "despesa",
+    "date": "2025-10-12",
+    "category_name": "Transporte"
   }
 ]
