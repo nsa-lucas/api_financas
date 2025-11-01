@@ -19,7 +19,7 @@ def categories():
     return jsonify(response), status
 
 
-@categories_bp.route("/add", methods=["POST"])
+@categories_bp.route("/new", methods=["POST"])
 @jwt_required()
 def add_category():
     data = request.json

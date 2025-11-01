@@ -5,26 +5,27 @@ from app.models.category import Category
 from app.models.transaction import Transaction
 
 
-def create_category(category_name):
+def create_category(name):
     current_user = get_jwt_identity()
 
-    category_name = category_name.strip().lower()
+    name = name.strip().lower()
+
+    if len(name) == 0:
+        name = "outros"
 
     category = Category.query.filter(
-        Category.name == category_name, Category.user_id == current_user
+        Category.name == name, Category.user_id == current_user
     ).first()
 
     if category:
-        return category.id
+        return category
 
-    category = Category(
-        name=category_name,
-        user_id=current_user,
-    )
+    category = Category(name=name, user_id=current_user)
+
     db.session.add(category)
     db.session.commit()
 
-    return category.id
+    return category
 
 
 def get_categories():

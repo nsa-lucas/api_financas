@@ -1,5 +1,4 @@
 from flask import send_file
-from sqlalchemy import extract
 import json
 from io import BytesIO
 from flask_jwt_extended import get_jwt_identity
@@ -7,30 +6,27 @@ from marshmallow import ValidationError
 
 
 from app.extensions import db
+from app.utils.to_datetime import to_datetime
+from app.services.category_services import create_category
 from app.models.category import Category
 from app.models.transaction import Transaction
-from app.services.category_services import create_category
-from app.schemas.transaction_schema import transaction_schema
-from app.utils.to_datetime import to_datetime
+from app.schemas.transaction_schema import transaction_schema, transactions_schema
+from app.schemas.filter_transactions_schema import filter_transaction_schema
 
 
 def create_transaction(data):
     current_user = get_jwt_identity()
 
-    if not data.get("category_name"):
-        return {"errors": {"category_name": ["Missing data for required field."]}}, 400
-
-    if not data.get("date"):
-        return {"errors": {"date": ["Missing data for required field."]}}, 400
-
-    category_id = create_category(data["category_name"])
-
-    data["category_id"] = data.pop("category_name")  # REPLACE PROPERTY
-
-    data["category_id"] = category_id
     data["user_id"] = current_user
 
-    data["date"] = to_datetime(data["date"]).date()
+    if data.get("date"):
+        data["date"] = to_datetime(data["date"]).date()
+
+    category = create_category(data.get("category"))
+
+    data["category_id"] = data.pop("category")
+
+    data["category_id"] = category.id
 
     try:
         validated_data = transaction_schema.load(data)
@@ -93,58 +89,40 @@ def import_transactions_json(file):
 def get_transactions(params):
     current_user = get_jwt_identity()
 
-    page = params.get("page", type=int)
-    limit = params.get("limit", type=int)
-    category_name = params.get("category_name", type=str)
-    transactions_type = params.get("type", type=str)
-    transactions_year = params.get("year", type=str)
-    # order_by_date = params.get("date_by_desc", type=str)
-    order_by_amount = params.get("amount_by_desc", type=str)
+    transactions = Transaction.query.filter(Transaction.user_id == current_user)
 
-    if not limit:
-        limit = 8
+    try:
+        filter_params = filter_transaction_schema.load(params)
+    except ValidationError as err:
+        return {"errors": err.messages}, 400
 
-    transactions_by_user = (
-        Transaction.query.filter(Transaction.user_id == current_user)
-        .order_by(Transaction.date.desc())
-        .paginate(page=page, per_page=limit, max_per_page=15)
-    )
+    if filter_params["order_by_date"] == "asc":
+        transactions = transactions.order_by(Transaction.date.asc())
 
-    if order_by_amount == "desc":
-        transactions_by_user = transactions_by_user.order_by(Transaction.amount.desc())
+    else:
+        transactions = transactions.order_by(Transaction.date.desc())
 
-    if category_name:
-        transactions_by_user = transactions_by_user.join(Category).filter(
+    if filter_params["order_by_amount"] == "asc":
+        transactions = transactions.order_by(Transaction.amount.asc())
+
+    if filter_params["order_by_amount"] == "desc":
+        transactions = transactions.order_by(Transaction.amount.desc())
+
+    if (
+        filter_params["category_name"]
+        and len(filter_params["category_name"].strip().lower()) != 0
+    ):
+        category_name = filter_params["category_name"]
+
+        transactions = transactions.join(Category).filter(
             Category.name.ilike(f"%{category_name}%")
         )
-    if transactions_type:
-        transactions_by_user = transactions_by_user.filter(
-            Transaction.type.ilike(f"%{transactions_type}%")
-        )
 
-    if transactions_year:
-        transactions_by_user = transactions_by_user.filter(
-            extract("year", Transaction.date) == transactions_year
-        )
+    transactions_filtered = transactions.paginate(
+        page=filter_params["page"], per_page=filter_params["limit"], max_per_page=20
+    )
 
-    if not transactions_by_user:
-        return {"message": "Transactions not found"}, 404
-
-    transactions = [
-        {
-            "id": t.id,
-            "description": t.description,
-            "amount": round(t.amount, 2),
-            "type": t.type,
-            "date": t.date.strftime("%d/%m/%Y"),
-            "user_id": t.user_id,
-            "category_name": t.category.name,
-            "category_id": t.category.id,
-        }
-        for t in transactions_by_user
-    ]
-
-    return (transactions), 200
+    return transactions_schema.dump(transactions_filtered), 200
 
 
 def export_transactions_json():

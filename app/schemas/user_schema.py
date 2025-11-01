@@ -15,6 +15,7 @@ class UserSchema(Schema):
         validate=validate.Length(
             min=8, error="The password must contain at least 8 characters."
         ),
+        load_only=True,
     )
     categories = fields.Nested("CategorySchema", many=True, exclude=("user_id",))
     transactions = fields.Nested("TransactionSchema", many=True, exclude=("user_id",))

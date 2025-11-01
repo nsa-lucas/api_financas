@@ -13,7 +13,7 @@ from app.services.transaction_services import (
 transactions_bp = Blueprint("transactions", __name__, url_prefix="/api/transactions")
 
 
-@transactions_bp.route("/add", methods=["POST"])
+@transactions_bp.route("/new", methods=["POST"])
 @jwt_required()
 def add_transactions():
     data = request.json
@@ -23,7 +23,7 @@ def add_transactions():
     return jsonify(response), status
 
 
-@transactions_bp.route("/add/import", methods=["POST"])
+@transactions_bp.route("/new/import", methods=["POST"])
 @jwt_required()
 def import_transactions():
     file = request.files["file"]
