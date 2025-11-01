@@ -1,6 +1,6 @@
-from .transactions_routes import transactions_bp
-from .users_routes import users_bp
-from .categories_routes import categories_bp
+from .transactions import transactions_bp
+from .users import users_bp
+from .categories import categories_bp
 
 
 def register_routes(app):

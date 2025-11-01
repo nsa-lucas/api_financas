@@ -1,33 +1,14 @@
 from flask_jwt_extended import get_jwt_identity
 
-from extensions import db
-from models.Category import Category
-from models.Transaction import Transaction
+from app.extensions import db
+from app.models.category import Category
+from app.models.transaction import Transaction
 
 
-# CRIAÇÃO DE CATEGORIA PELA ROTA DE CATEGORIA
 def create_category(category_name):
     current_user = get_jwt_identity()
 
-    # VERIFICANDO SE CATEGORIA JA EXISTE
-    if Category.query.filter(
-        Category.name == category_name, Category.user_id == current_user
-    ).first():
-        return {"message": "Category name already exists"}, 409
-
-    category = Category(
-        name=category_name.strip().lower(),  # transformando texto em caixa baixa
-        user_id=current_user,
-    )
-    db.session.add(category)
-    db.session.commit()
-
-    return {"message": "Category created successfully"}, 201
-
-
-# FUNCAO PARA REQUISTAR OU CRIAR UMA CATEGORIA PELA ROTA DE CRIAÇÃO DE TRANSAÇÃO
-def get_category(category_name):
-    current_user = get_jwt_identity()
+    category_name = category_name.strip().lower()
 
     category = Category.query.filter(
         Category.name == category_name, Category.user_id == current_user
@@ -36,17 +17,16 @@ def get_category(category_name):
     if category:
         return category.id
 
-    new_category = Category(
-        name=category_name.strip().lower(),  # transformando texto em caixa baixa
+    category = Category(
+        name=category_name,
         user_id=current_user,
     )
-    db.session.add(new_category)
+    db.session.add(category)
     db.session.commit()
 
-    return new_category.id
+    return category.id
 
 
-# RETORNA TODAS AS CATEGORIAS DO USUARIO
 def get_categories():
     current_user = get_jwt_identity()
 
@@ -77,7 +57,6 @@ def update_category_name(data, category_id):
     new_category_name = data.get("category_name").strip().lower()
 
     if category:
-        # SE CATEGORIA EXISTIR, VERIFICO SE JA EXISTE ALGUMA CATEGORIA COM O MESMO NOME
         if Category.query.filter(
             Category.name == new_category_name, Category.user_id == current_user
         ).first():

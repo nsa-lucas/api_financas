@@ -1,7 +1,7 @@
 from flask_login import UserMixin
 import uuid
 
-from extensions import db, jwt
+from app.extensions import db, jwt
 
 
 class User(db.Model, UserMixin):
@@ -15,6 +15,7 @@ class User(db.Model, UserMixin):
     categories = db.relationship(
         "Category", backref="user", lazy=True, cascade="all, delete"
     )
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
 
 
 @jwt.user_lookup_loader

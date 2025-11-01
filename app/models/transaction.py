@@ -1,4 +1,4 @@
-from extensions import db
+from app.extensions import db
 
 
 class Transaction(db.Model):
@@ -9,3 +9,4 @@ class Transaction(db.Model):
     date = db.Column(db.Date, nullable=False)
     user_id = db.Column(db.String, db.ForeignKey("user.id"), nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey("category.id"), nullable=False)
+    created_at = db.Column(db.DateTime, server_default=db.func.now())

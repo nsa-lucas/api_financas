@@ -11,11 +11,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copia o restante do código
 COPY . .
 
-# Expõe a porta usada pelo app (Flask costuma usar 5000)
+# Expõe a porta usada pelo app
 EXPOSE 5000
 
 # Variáveis de ambiente do Flask
-ENV FLASK_APP=app.py
+ENV FLASK_APP=app/app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_ENV=development
 

@@ -1,8 +1,8 @@
 from flask import Flask, jsonify
 
-from extensions import db, migrate, cors, jwt
-from routes import register_routes
-from config import Config
+from app.extensions import db, migrate, cors, jwt
+from app.routes import register_routes
+from app.config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -20,8 +20,10 @@ register_routes(app)
 
 
 @app.route("/")
-def home():
-    return jsonify({"status": "ok", "message": "API running", "version": "1.0"})
+def init():
+    return jsonify(
+        {"status": "ok", "message": "API running", "version": "1.0", "title": "Finance"}
+    )
 
 
 # Modo debug - DEV

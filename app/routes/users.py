@@ -1,21 +1,21 @@
 from flask import request, jsonify, Blueprint
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 
-from models.User import User
-from services.user_services import (
+from app.models.user import User
+from app.services.user_services import (
     create_user,
     user_login,
     delete_user_all,
     update_user_data,
 )
 
-from extensions import blacklist
+from app.extensions import blacklist
 
 users_bp = Blueprint("users", __name__, url_prefix="/api/users")
 
 
-@users_bp.route("/add", methods=["POST"])
-def add_user():
+@users_bp.route("/signup", methods=["POST"])
+def create_user_route():
     data = request.json
 
     response, status = create_user(data)
@@ -23,11 +23,9 @@ def add_user():
     return jsonify(response), status
 
 
-# ROTA PARA DELETAR USUARIO
-# OBS>> AO DELETAR UM USUARIO, DEVE-SE DELETAR TAMBÉM TODAS AS TRANSAÇÕES E CATEGORIAS DESSE USUARIO
 @users_bp.route("/delete", methods=["DELETE"])
 @jwt_required()
-def delete_user():
+def delete_user_route():
     data = request.json
 
     response, status = delete_user_all(data)
@@ -37,7 +35,7 @@ def delete_user():
 
 @users_bp.route("/update", methods=["PUT"])
 @jwt_required()
-def update_user():
+def update_user_route():
     data = request.json
 
     response, status = update_user_data(data)
@@ -45,7 +43,7 @@ def update_user():
     return jsonify(response), status
 
 
-@users_bp.route("/login", methods=["POST"])
+@users_bp.route("/signin", methods=["POST"])
 def login():
     data = request.json
 

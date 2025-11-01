@@ -12,7 +12,6 @@ migrate = Migrate()
 blacklist = set()
 
 
-# TRATATIVA CASO TENTE ACESSAR ROTA SEM ESTAR AUTENTICADO
 @jwt.unauthorized_loader
 def unauthorized_access(error):
     return jsonify({"message": "Authentication required"}), 401

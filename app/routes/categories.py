@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_jwt_extended import jwt_required
 
-from services.category_services import (
+from app.services.category_services import (
     get_categories,
     create_category,
     update_category_name,

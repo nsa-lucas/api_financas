@@ -1,39 +1,34 @@
 from flask_jwt_extended import create_access_token, get_jwt_identity
-from email_validator import validate_email
 from werkzeug.security import generate_password_hash, check_password_hash
+from marshmallow import ValidationError
 
-from extensions import db
-
-from models.User import User
+from app.schemas.user_schema import user_schema
+from app.extensions import db
+from app.models.user import User
 
 
 def create_user(data):
-    if data.get("name") and data.get("email") and data.get("password"):
-        email = data["email"].strip().lower()
+    try:
+        validated_data = user_schema.load(data)
+    except ValidationError as err:
+        return {"errors": err.messages}, 400
 
-        verify_email = validate_email(email)
+    email = data["email"].strip().lower()
 
-        if not verify_email:
-            return {"message": "Email format invalid"}, 400
+    if User.query.filter_by(email=email).first():
+        return {"error": "Email already exists."}, 409
 
-        # VERIFICANDO SE EMAIL JA EXISTE
-        if User.query.filter(User.email == email).first():
-            return {"message": "Email already exists"}, 409
+    hashed_password = generate_password_hash(
+        validated_data["password"], method="pbkdf2:sha256", salt_length=8
+    )
 
-        # CRIPTOGRAFANDO SENHA
-        if len(data["password"]) < 8:
-            return {"message": "Password must contain 8 characters or more"}, 400
+    validated_data["password"] = hashed_password
 
-        hashed_password = generate_password_hash(data["password"], "pbkdf2:sha256", 8)
+    user = User(**validated_data)
+    db.session.add(user)
+    db.session.commit()
 
-        user = User(name=data["name"], email=email, password=hashed_password)
-
-        db.session.add(user)
-        db.session.commit()
-
-        return {"message": "User added successfully"}, 201
-
-    return {"message": "Invalid user data"}, 400
+    return {"message": "User created successfully"}, 201
 
 
 # PARA DELETAR O USUARIO, DEVE SER DELETAR ANTES TODAS AS TRANSAÇÕES E CATEGORIAS DESSE USUARIO
@@ -86,11 +81,6 @@ def update_user_data(data):
 
 def user_login(data):
     email = data["email"]
-
-    verify_email = validate_email(email, check_deliverability=False)
-
-    if not verify_email:
-        return {"message": "Email format invalid"}, 400
 
     user = User.query.filter(User.email == email).first()
 

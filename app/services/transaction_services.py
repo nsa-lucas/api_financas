@@ -3,46 +3,48 @@ from sqlalchemy import extract
 import json
 from io import BytesIO
 from flask_jwt_extended import get_jwt_identity
+from marshmallow import ValidationError
 
 
-from extensions import db
-from models.Category import Category
-from models.Transaction import Transaction
-from .category_services import get_category
+from app.extensions import db
+from app.models.category import Category
+from app.models.transaction import Transaction
+from app.services.category_services import create_category
+from app.schemas.transaction_schema import transaction_schema
+from app.utils.to_datetime import to_datetime
 
 
 def create_transaction(data):
     current_user = get_jwt_identity()
 
-    if (
-        data.get("description")
-        and data.get("amount")
-        and data.get("type")
-        and data.get("date")
-        and data.get("category_name")
-    ):
-        category_id = get_category(data["category_name"])
+    if not data.get("category_name"):
+        return {"errors": {"category_name": ["Missing data for required field."]}}, 400
 
-        transaction_type = data["type"].strip().lower()
+    if not data.get("date"):
+        return {"errors": {"date": ["Missing data for required field."]}}, 400
 
-        if transaction_type != "receita" and transaction_type != "despesa":
-            return {"message": "Invalid transaction type data"}, 400
+    category_id = create_category(data["category_name"])
 
-        transaction = Transaction(
-            description=data["description"],
-            amount=round(data["amount"], 2),
-            type=transaction_type,
-            date=data["date"],
-            user_id=current_user,
-            category_id=category_id,
-        )
+    data["category_id"] = data.pop("category_name")  # REPLACE PROPERTY
 
-        db.session.add(transaction)
-        db.session.commit()
+    data["category_id"] = category_id
+    data["user_id"] = current_user
 
-        return {"message": "Transaction added successfully"}, 201
+    data["date"] = to_datetime(data["date"]).date()
 
-    return {"message": "Invalid transaction data"}, 400
+    try:
+        validated_data = transaction_schema.load(data)
+    except ValidationError as err:
+        return {"errors": err.messages}, 400
+
+    transaction = Transaction(**validated_data)
+
+    db.session.add(transaction)
+    db.session.commit()
+
+    return {
+        "message": "Transaction added successfully",
+    }, 201
 
 
 def import_transactions_json(file):
@@ -65,7 +67,7 @@ def import_transactions_json(file):
         ):
             return {"message": "Invalid json items"}, 400
 
-        category_id = get_category(item["category_name"])
+        category_id = create_category(item["category_name"])
 
         transaction_type = item["type"].strip().lower()
 
@@ -197,7 +199,7 @@ def transaction_update(data, transaction_id):
             and data.get("category_name") != transaction.category.name
         ):
             # SE TRUE, CHAMA A FUNCAO GET_CATEOGORY, ONDE SERA REQUISITADO OU CRIADO A NOVA CATEGORIA
-            category_id = get_category(data.get("category_name"))
+            category_id = create_category(data.get("category_name"))
 
         else:
             # SE FALSE, RETORNA O ID DA CATEGORIA ATUAL

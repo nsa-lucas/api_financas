@@ -4,7 +4,4 @@ env/
 .venv/
 *.env
 migrations/
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
+
