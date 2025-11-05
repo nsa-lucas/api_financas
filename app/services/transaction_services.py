@@ -146,16 +146,7 @@ def export_transactions_json():
     if not transactions:
         return ({"message": "Transactions not found"}), 404
 
-    all_transactions = [
-        {
-            "description": t.description,
-            "amount": round(t.amount, 2),
-            "type": t.type,
-            "date": t.date.strftime("%d-%m-%Y"),
-            "category_name": t.category.name,
-        }
-        for t in transactions
-    ]
+    all_transactions = transactions_schema.dump(transactions)
 
     # Gera JSON formatado
     json_data = json.dumps(all_transactions, ensure_ascii=False, indent=2)
