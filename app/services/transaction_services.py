@@ -6,12 +6,15 @@ from marshmallow import ValidationError
 
 
 from app.extensions import db
-from app.utils.to_datetime import to_datetime
-from app.services.category_services import create_category
 from app.models.category import Category
 from app.models.transaction import Transaction
-from app.schemas.transaction_schema import transaction_schema, transactions_schema
+from app.services.category_services import create_category
+from app.schemas.transaction_schema import (
+    transaction_schema,
+    transactions_schema,
+)
 from app.schemas.filter_transactions_schema import filter_transaction_schema
+from app.utils.to_datetime import to_datetime
 
 
 def create_transaction(data):
@@ -23,15 +26,18 @@ def create_transaction(data):
         data["date"] = to_datetime(data["date"]).date()
 
     category = create_category(data.get("category"))
-
     data["category_id"] = data.pop("category")
-
     data["category_id"] = category.id
+
+    data["description"] = data["description"].lower()
+    data["type"] = data["type"].strip().lower()
 
     try:
         validated_data = transaction_schema.load(data)
     except ValidationError as err:
         return {"errors": err.messages}, 400
+
+    validated_data["amount"] = round(validated_data["amount"], 2)
 
     transaction = Transaction(**validated_data)
 
@@ -51,37 +57,35 @@ def import_transactions_json(file):
 
     transactions_json = json.load(file)
 
-    replace_json_data = []
-
     count = 0
 
     for item in transactions_json:
-        count+=1
+        count += 1
 
-        item['user_id'] = current_user
+        item["user_id"] = current_user
 
         if item.get("date"):
             item["date"] = to_datetime(item["date"]).date()
 
-        category = create_category(item.get('category'))
+        category = create_category(item.get("category"))
 
-        item['category_id'] = item.pop('category')
+        item["category_id"] = item.pop("category")
 
-        item['category_id'] = category.id
+        item["category_id"] = category.id
 
         # TESTE - VARIAÇÃO DE CADASTROS
         if (count % 2) == 0:
-            item['type'] = 'expense'
-        else: 
-            item['type'] = 'income'
+            item["type"] = "expense"
+        else:
+            item["type"] = "income"
 
         transaction_replace = {
-            'user_id': item['user_id'],
-            'description': item['description'],
-            'amount': item['amount'],
-            'category_id':item['category_id'],
-            'type': item['type'],
-            'date': item['date']
+            "user_id": item["user_id"],
+            "description": item["description"],
+            "amount": item["amount"],
+            "category_id": item["category_id"],
+            "type": item["type"],
+            "date": item["date"],
         }
 
         try:
@@ -93,7 +97,6 @@ def import_transactions_json(file):
 
         db.session.add(transaction)
 
-
     db.session.commit()
 
     return {"message": "Transactions list import successfully"}, 201
@@ -103,6 +106,9 @@ def get_transactions(params):
     current_user = get_jwt_identity()
 
     transactions = Transaction.query.filter(Transaction.user_id == current_user)
+
+    if len(transactions.all()) == 0:
+        return ({"message": "Transactions not found"}), 404
 
     try:
         filter_params = filter_transaction_schema.load(params)
@@ -143,7 +149,7 @@ def export_transactions_json():
 
     transactions = Transaction.query.filter(Transaction.user_id == current_user).all()
 
-    if not transactions:
+    if len(transactions) == 0:
         return ({"message": "Transactions not found"}), 404
 
     all_transactions = transactions_schema.dump(transactions)
@@ -158,9 +164,15 @@ def export_transactions_json():
 
     filename = "transactions_export.json"
 
-    return send_file(
-        buffer, as_attachment=True, download_name=filename, mimetype="application/json"
-    ), 200
+    return (
+        send_file(
+            buffer,
+            as_attachment=True,
+            download_name=filename,
+            mimetype="application/json",
+        ),
+        200,
+    )
 
 
 def transaction_update(data, transaction_id):
@@ -170,34 +182,35 @@ def transaction_update(data, transaction_id):
         return {"message": "No data changed"}, 400
 
     transaction = Transaction.query.filter(
-        Transaction.id == transaction_id, Transaction.user_id == current_user
-    ).first()  # RETORNA TRANSAÇÃO DO USUARIO LOGADO
+        Transaction.user_id == current_user, Transaction.id == transaction_id
+    ).first()
 
-    # VERIFICANDO SE TRANSAÇÃO EXISTE
-    if transaction:
-        # VERIFICA SE O USUARIO PASSOU UMA NOVO NOME PARA CATEGORIA E O NOME É DIFERENTE DO ATUAL
-        if (
-            data.get("category_name")
-            and data.get("category_name") != transaction.category.name
-        ):
-            # SE TRUE, CHAMA A FUNCAO GET_CATEOGORY, ONDE SERA REQUISITADO OU CRIADO A NOVA CATEGORIA
-            category_id = create_category(data.get("category_name"))
+    if not transaction:
+        return {"message": "Transaction not found"}, 404
 
-        else:
-            # SE FALSE, RETORNA O ID DA CATEGORIA ATUAL
-            category_id = transaction.category_id
+    if data.get("date"):
+        data["date"] = to_datetime(data["date"]).date()
+        transaction.date = data["date"]
 
-        transaction.description = data.get("description", transaction.description)
-        transaction.amount = round(data.get("amount", transaction.amount), 2)
-        transaction.type = data.get("type", transaction.type)
-        transaction.date = data.get("date", transaction.date)
-        transaction.category_id = category_id
+    if data.get("category"):
+        category = create_category(data.get("category"))
+        transaction.category_id = category.id
 
-        db.session.commit()
+    if data.get("description"):
+        transaction.description = data["description"].lower()
 
-        return {"message": "Transaction updated successfully"}, 200
+    if data.get("amount"):
+        transaction.amount = round(data["amount"], 2)
 
-    return {"message": "Transaction not found"}, 404
+    if data.get("type"):
+        t = data["type"].strip().lower()
+        if t not in ["income", "expense"]:
+            return {"message": "Invalid type. Must be 'income' or 'expense'."}, 400
+        transaction.type = t
+
+    db.session.commit()
+
+    return {"message": "Transaction updated successfully"}, 200
 
 
 def transaction_delete(transaction_id):
