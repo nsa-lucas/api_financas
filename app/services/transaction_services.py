@@ -51,35 +51,48 @@ def import_transactions_json(file):
 
     transactions_json = json.load(file)
 
+    replace_json_data = []
+
+    count = 0
+
     for item in transactions_json:
-        if not all(
-            [
-                item.get("description")
-                and item.get("amount")
-                and item.get("type")
-                and item.get("date")
-                and item.get("category_name")
-            ]
-        ):
-            return {"message": "Invalid json items"}, 400
+        count+=1
 
-        category_id = create_category(item["category_name"])
+        item['user_id'] = current_user
 
-        transaction_type = item["type"].strip().lower()
+        if item.get("date"):
+            item["date"] = to_datetime(item["date"]).date()
 
-        if transaction_type != "receita" and transaction_type != "despesa":
-            return {"message": "Invalid transaction type data"}, 400
+        category = create_category(item.get('category'))
 
-        transaction = Transaction(
-            description=item["description"],
-            amount=round(item["amount"], 2),
-            type=transaction_type,
-            date=item["date"],
-            user_id=current_user,
-            category_id=category_id,
-        )
+        item['category_id'] = item.pop('category')
+
+        item['category_id'] = category.id
+
+        # TESTE - VARIAÇÃO DE CADASTROS
+        if (count % 2) == 0:
+            item['type'] = 'expense'
+        else: 
+            item['type'] = 'income'
+
+        transaction_replace = {
+            'user_id': item['user_id'],
+            'description': item['description'],
+            'amount': item['amount'],
+            'category_id':item['category_id'],
+            'type': item['type'],
+            'date': item['date']
+        }
+
+        try:
+            validated_data = transaction_schema.load(transaction_replace)
+        except ValidationError as err:
+            return {"errors": err.messages}, 400
+
+        transaction = Transaction(**validated_data)
 
         db.session.add(transaction)
+
 
     db.session.commit()
 
@@ -119,7 +132,7 @@ def get_transactions(params):
         )
 
     transactions_filtered = transactions.paginate(
-        page=filter_params["page"], per_page=filter_params["limit"], max_per_page=20
+        page=filter_params["page"], per_page=filter_params["limit"], max_per_page=100
     )
 
     return transactions_schema.dump(transactions_filtered), 200
