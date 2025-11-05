@@ -11,6 +11,9 @@ class TransactionSchema(Schema):
     type = fields.Str(
         required=True,
         validate=validate.OneOf(["income", "expense"]),
+        error_messages={
+            "error": "The type should be income or expense.",
+        },
     )
     date = fields.Date(load_default=lambda: datetime.now().date())
     user_id = fields.Str(required=True, load_only=True)
