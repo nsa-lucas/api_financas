@@ -43,14 +43,6 @@ def transactions():
     return jsonify(response), status
 
 
-# @transactions_bp.route("/balance", methods=["GET"])
-# @login_required
-# def transactions_balance():
-#     response, status = get_balance()
-
-#     return jsonify(response), status
-
-
 @transactions_bp.route("/export", methods=["GET"])
 @jwt_required()
 def export_transactions():
@@ -60,7 +52,7 @@ def export_transactions():
 
 
 @transactions_bp.route("/update/<int:transaction_id>", methods=["PUT"])
-@jwt_required
+@jwt_required()
 def update_transaction(transaction_id):
     data = request.json
 
