@@ -44,7 +44,7 @@ def transactions_route():
     return jsonify(response), status
 
 
-@transactions_bp.route("/expenses", methods=["GET"])
+@transactions_bp.route("/summary", methods=["GET"])
 @jwt_required()
 def movement_summary_route():
     params = request.args

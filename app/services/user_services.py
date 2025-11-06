@@ -1,4 +1,4 @@
-from flask_jwt_extended import create_access_token, get_jwt_identity
+from flask_jwt_extended import get_jwt_identity
 from werkzeug.security import generate_password_hash, check_password_hash
 from marshmallow import ValidationError
 
@@ -33,7 +33,9 @@ def create_user(data):
 
 # PARA DELETAR O USUARIO, DEVE SER DELETAR ANTES TODAS AS TRANSAÇÕES E CATEGORIAS DESSE USUARIO
 def delete_user_all(data):
-    user = User.query.get(get_jwt_identity().id)
+    current_user = get_jwt_identity()
+
+    user = User.query.get(current_user)
 
     if check_password_hash(user.password, data["password"]):
         db.session.delete(user)
@@ -47,14 +49,14 @@ def delete_user_all(data):
 
 
 def update_user_data(data):
+    current_user = get_jwt_identity()
+
     if not data:
         return {"message": "No data changed"}, 400
 
     name = data.get("name")
     email = data.get("email")
     password = data.get("password")
-
-    current_user = get_jwt_identity()
 
     user = User.query.get(current_user)
 
@@ -77,23 +79,3 @@ def update_user_data(data):
     db.session.commit()
 
     return {"message": "User updated successfully"}, 200
-
-
-def user_login(data):
-    email = data["email"]
-
-    user = User.query.filter(User.email == email).first()
-
-    if not user:
-        return {"message": "Email or password invalid"}, 400
-
-    password_check = check_password_hash(user.password, data["password"])
-
-    if password_check:
-        token = create_access_token(identity=user.id)
-
-        response = {"token": token, "user": {"id": user.id, "email": user.email}}
-
-        return {"message": "Authorized login", "data": response}, 202
-
-    return {"message": "Email or password invalid"}, 400

@@ -95,7 +95,7 @@ def import_transactions_json(file):
     return {"message": "Transactions list import successfully"}, 201
 
 
-def movement_summary(params):
+def get_transactions(params):
     current_user = get_jwt_identity()
 
     transactions = Transaction.query.filter(Transaction.user_id == current_user)
@@ -137,7 +137,7 @@ def movement_summary(params):
     return transactions_schema.dump(transactions_filtered), 200
 
 
-def get_expenses(params):
+def movement_summary(params):
 
     current_user = get_jwt_identity()
 
@@ -157,25 +157,22 @@ def get_expenses(params):
     if type != "expense" and type != "income" and not type:
         type = "expense"
 
-    get_expenses = (
+    query = (
         Transaction.query.join(Category)
         .filter(Transaction.user_id == current_user, Transaction.type == type)
         .with_entities(Category.name, func.sum(Transaction.amount).label("total"))
     )
 
     if month:
-        get_expenses = get_expenses.filter(extract("month", Transaction.date) == month)
+        query = query.filter(extract("month", Transaction.date) == month)
 
     if year:
-        get_expenses = get_expenses.filter(extract("year", Transaction.date) == year)
+        query = query.filter(extract("year", Transaction.date) == year)
 
-    get_expenses = (
-        get_expenses.group_by(Category.name).order_by(desc("total")).limit(limit).all()
-    )
+    query = query.group_by(Category.name).order_by(desc("total")).limit(limit).all()
     # FILTRO DE CATEGORIAS COM MAIORES GASTOS - PER MONTH, PER YEAR
     res_expenses = [
-        {"category": name, "total": round(float(total), 2)}
-        for name, total in get_expenses
+        {"category": name, "total": round(float(total), 2)} for name, total in query
     ]
 
     return res_expenses, 200

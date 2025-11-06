@@ -1,702 +1,2522 @@
 [
   {
-    "description": "Cursos online",
-    "amount": 1477.53,
-    "type": "despesa",
-    "date": "2025-01-23",
-    "category_name": "Educação"
+    "description": "Presente amigo",
+    "amount": 604.06,
+    "date": "17/01/2023",
+    "type": "expense",
+    "category": "Entretenimento"
   },
   {
-    "description": "Academia",
-    "amount": 1045.85,
-    "type": "despesa",
-    "date": "2025-01-23",
-    "category_name": "Saúde"
+    "description": "Venda item usado",
+    "amount": 5218.21,
+    "date": "10/01/2023",
+    "type": "income",
+    "category": "Freelance"
   },
   {
-    "description": "Academia",
-    "amount": 103.19,
-    "type": "despesa",
-    "date": "2025-01-25",
-    "category_name": "Saúde"
+    "description": "Conta de energia",
+    "amount": 411.7,
+    "date": "28/01/2023",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 2925.87,
+    "date": "19/01/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 223.71,
+    "date": "20/01/2023",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 1806.78,
+    "date": "18/01/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Combustível",
+    "amount": 220.53,
+    "date": "06/01/2023",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 4936.63,
+    "date": "19/01/2023",
+    "type": "income",
+    "category": "Vendas"
   },
   {
     "description": "Farmácia",
-    "amount": 154.71,
-    "type": "despesa",
-    "date": "2025-01-16",
-    "category_name": "Saúde"
+    "amount": 764.29,
+    "date": "15/01/2023",
+    "type": "expense",
+    "category": "Serviços"
   },
   {
-    "description": "Netflix",
-    "amount": 1211.28,
-    "type": "despesa",
-    "date": "2025-01-12",
-    "category_name": "Lazer"
+    "description": "Rendimento investimento",
+    "amount": 284.96,
+    "date": "06/01/2023",
+    "type": "income",
+    "category": "Vendas"
   },
   {
-    "description": "Freelance design",
-    "amount": 1740.67,
-    "type": "receita",
-    "date": "2025-01-06",
-    "category_name": "Freelance"
+    "description": "Compra online",
+    "amount": 713.39,
+    "date": "02/02/2023",
+    "type": "expense",
+    "category": "Entretenimento"
   },
   {
-    "description": "Farmácia",
-    "amount": 797.52,
-    "type": "despesa",
-    "date": "2025-01-21",
-    "category_name": "Saúde"
+    "description": "Transporte público",
+    "amount": 299.34,
+    "date": "14/02/2023",
+    "type": "expense",
+    "category": "Lazer"
   },
   {
-    "description": "Netflix",
-    "amount": 1189.65,
-    "type": "despesa",
-    "date": "2025-01-22",
-    "category_name": "Lazer"
-  },
-  {
-    "description": "Lanche",
-    "amount": 834.57,
-    "type": "despesa",
-    "date": "2025-01-04",
-    "category_name": "Alimentação"
-  },
-  {
-    "description": "Lanche",
-    "amount": 1402.74,
-    "type": "despesa",
-    "date": "2025-01-21",
-    "category_name": "Alimentação"
+    "description": "Conta de energia",
+    "amount": 300.36,
+    "date": "20/02/2023",
+    "type": "expense",
+    "category": "Lazer"
   },
   {
     "description": "Supermercado",
-    "amount": 1136.39,
-    "type": "despesa",
-    "date": "2025-02-06",
-    "category_name": "Alimentação"
-  },
-  {
-    "description": "Conta de luz",
-    "amount": 475.56,
-    "type": "despesa",
-    "date": "2025-02-02",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Transporte público",
-    "amount": 824.34,
-    "type": "despesa",
-    "date": "2025-02-21",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Transporte público",
-    "amount": 516.33,
-    "type": "despesa",
-    "date": "2025-02-02",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Combustível",
-    "amount": 1337.53,
-    "type": "despesa",
-    "date": "2025-02-13",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Lanche",
-    "amount": 1142.04,
-    "type": "despesa",
-    "date": "2025-02-09",
-    "category_name": "Alimentação"
-  },
-  {
-    "description": "Conta de luz",
-    "amount": 131.28,
-    "type": "despesa",
-    "date": "2025-02-10",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Consulta médica",
-    "amount": 649.33,
-    "type": "despesa",
-    "date": "2025-02-07",
-    "category_name": "Saúde"
-  },
-  {
-    "description": "Conta de luz",
-    "amount": 142.08,
-    "type": "despesa",
-    "date": "2025-02-10",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Academia",
-    "amount": 849.56,
-    "type": "despesa",
-    "date": "2025-02-26",
-    "category_name": "Saúde"
-  },
-  {
-    "description": "Freelance design",
-    "amount": 5845.3,
-    "type": "receita",
-    "date": "2025-03-26",
-    "category_name": "Freelance"
-  },
-  {
-    "description": "Aluguel apartamento",
-    "amount": 194.09,
-    "type": "despesa",
-    "date": "2025-03-01",
-    "category_name": "Moradia"
-  },
-  {
-    "description": "Freelance design",
-    "amount": 505.1,
-    "type": "receita",
-    "date": "2025-03-23",
-    "category_name": "Freelance"
-  },
-  {
-    "description": "Combustível",
-    "amount": 1103.46,
-    "type": "despesa",
-    "date": "2025-03-01",
-    "category_name": "Transporte"
+    "amount": 320.69,
+    "date": "01/02/2023",
+    "type": "expense",
+    "category": "Transporte"
   },
   {
     "description": "Cinema",
-    "amount": 184.48,
-    "type": "despesa",
-    "date": "2025-03-19",
-    "category_name": "Lazer"
+    "amount": 330.38,
+    "date": "06/02/2023",
+    "type": "expense",
+    "category": "Transporte"
   },
   {
-    "description": "Padaria",
-    "amount": 1248.36,
-    "type": "despesa",
-    "date": "2025-03-09",
-    "category_name": "Alimentação"
+    "description": "Combustível",
+    "amount": 747.89,
+    "date": "01/02/2023",
+    "type": "expense",
+    "category": "Lazer"
   },
   {
-    "description": "Netflix",
-    "amount": 767.04,
-    "type": "despesa",
-    "date": "2025-03-06",
-    "category_name": "Lazer"
+    "description": "Cinema",
+    "amount": 748.67,
+    "date": "17/02/2023",
+    "type": "expense",
+    "category": "Lazer"
   },
   {
-    "description": "Lanche",
-    "amount": 1163.04,
-    "type": "despesa",
-    "date": "2025-03-22",
-    "category_name": "Alimentação"
+    "description": "Freelance projeto",
+    "amount": 2673.37,
+    "date": "27/02/2023",
+    "type": "income",
+    "category": "Vendas"
   },
   {
-    "description": "Show",
-    "amount": 441.56,
-    "type": "despesa",
-    "date": "2025-03-25",
-    "category_name": "Lazer"
+    "description": "Supermercado",
+    "amount": 188.45,
+    "date": "04/02/2023",
+    "type": "expense",
+    "category": "Moradia"
   },
   {
-    "description": "Lanche",
-    "amount": 1390.46,
-    "type": "despesa",
-    "date": "2025-03-22",
-    "category_name": "Alimentação"
+    "description": "Streaming mensal",
+    "amount": 500.4,
+    "date": "09/02/2023",
+    "type": "expense",
+    "category": "Alimentação"
   },
   {
-    "description": "Salário mensal",
-    "amount": 5558.48,
-    "type": "receita",
-    "date": "2025-04-14",
-    "category_name": "Salário"
+    "description": "Cinema",
+    "amount": 414.73,
+    "date": "27/03/2023",
+    "type": "expense",
+    "category": "Lazer"
   },
   {
-    "description": "Conta de internet",
-    "amount": 1113.8,
-    "type": "despesa",
-    "date": "2025-04-25",
-    "category_name": "Contas"
+    "description": "Freelance projeto",
+    "amount": 4996.87,
+    "date": "27/03/2023",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 2097.23,
+    "date": "27/03/2023",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 846.04,
+    "date": "19/03/2023",
+    "type": "income",
+    "category": "Investimentos"
   },
   {
     "description": "Academia",
-    "amount": 230.92,
-    "type": "despesa",
-    "date": "2025-04-20",
-    "category_name": "Saúde"
+    "amount": 291.14,
+    "date": "07/03/2023",
+    "type": "expense",
+    "category": "Presentes"
   },
   {
-    "description": "Freelance design",
-    "amount": 1490.09,
-    "type": "receita",
-    "date": "2025-04-03",
-    "category_name": "Freelance"
+    "description": "Conta de energia",
+    "amount": 82.88,
+    "date": "20/03/2023",
+    "type": "expense",
+    "category": "Lazer"
   },
   {
-    "description": "Lanche",
-    "amount": 182.13,
-    "type": "despesa",
-    "date": "2025-04-20",
-    "category_name": "Alimentação"
+    "description": "Streaming mensal",
+    "amount": 457.47,
+    "date": "05/03/2023",
+    "type": "expense",
+    "category": "Saúde"
   },
   {
-    "description": "Salário mensal",
-    "amount": 5485.6,
-    "type": "receita",
-    "date": "2025-04-02",
-    "category_name": "Salário"
-  },
-  {
-    "description": "Estacionamento",
-    "amount": 324.53,
-    "type": "despesa",
-    "date": "2025-04-20",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Estacionamento",
-    "amount": 1044.22,
-    "type": "despesa",
-    "date": "2025-04-04",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Viagem",
-    "amount": 1150.1,
-    "type": "despesa",
-    "date": "2025-04-20",
-    "category_name": "Lazer"
-  },
-  {
-    "description": "Manutenção veículo",
-    "amount": 1032.79,
-    "type": "despesa",
-    "date": "2025-04-02",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Livros",
-    "amount": 1201.37,
-    "type": "despesa",
-    "date": "2025-05-11",
-    "category_name": "Educação"
-  },
-  {
-    "description": "Consulta médica",
-    "amount": 35.08,
-    "type": "despesa",
-    "date": "2025-05-18",
-    "category_name": "Saúde"
-  },
-  {
-    "description": "Freelance tradução",
-    "amount": 2358.51,
-    "type": "receita",
-    "date": "2025-05-12",
-    "category_name": "Freelance"
-  },
-  {
-    "description": "Transporte público",
-    "amount": 1338.87,
-    "type": "despesa",
-    "date": "2025-05-19",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Freelance design",
-    "amount": 2640.91,
-    "type": "receita",
-    "date": "2025-05-02",
-    "category_name": "Freelance"
-  },
-  {
-    "description": "Exames",
-    "amount": 1291.5,
-    "type": "despesa",
-    "date": "2025-05-24",
-    "category_name": "Saúde"
-  },
-  {
-    "description": "Conta de luz",
-    "amount": 265.95,
-    "type": "despesa",
-    "date": "2025-05-21",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Condomínio",
-    "amount": 599.31,
-    "type": "despesa",
-    "date": "2025-05-16",
-    "category_name": "Moradia"
-  },
-  {
-    "description": "Exames",
-    "amount": 102.68,
-    "type": "despesa",
-    "date": "2025-05-13",
-    "category_name": "Saúde"
-  },
-  {
-    "description": "Venda de roupas",
-    "amount": 4791.33,
-    "type": "receita",
-    "date": "2025-05-02",
-    "category_name": "Venda"
-  },
-  {
-    "description": "Consulta médica",
-    "amount": 1030.38,
-    "type": "despesa",
-    "date": "2025-06-23",
-    "category_name": "Saúde"
-  },
-  {
-    "description": "Conta de água",
-    "amount": 1158.49,
-    "type": "despesa",
-    "date": "2025-06-23",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Açougue",
-    "amount": 293.53,
-    "type": "despesa",
-    "date": "2025-06-14",
-    "category_name": "Alimentação"
-  },
-  {
-    "description": "Condomínio",
-    "amount": 59.3,
-    "type": "despesa",
-    "date": "2025-06-10",
-    "category_name": "Moradia"
-  },
-  {
-    "description": "Condomínio",
-    "amount": 1231.5,
-    "type": "despesa",
-    "date": "2025-06-10",
-    "category_name": "Moradia"
-  },
-  {
-    "description": "Combustível",
-    "amount": 635.23,
-    "type": "despesa",
-    "date": "2025-06-08",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Conta de celular",
-    "amount": 709.39,
-    "type": "despesa",
-    "date": "2025-06-11",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Venda de produtos usados",
-    "amount": 5802.79,
-    "type": "receita",
-    "date": "2025-06-10",
-    "category_name": "Venda"
-  },
-  {
-    "description": "Salário mensal",
-    "amount": 5586.81,
-    "type": "receita",
-    "date": "2025-06-01",
-    "category_name": "Salário"
-  },
-  {
-    "description": "Estacionamento",
-    "amount": 929.86,
-    "type": "despesa",
-    "date": "2025-06-15",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Venda de roupas",
-    "amount": 1043.15,
-    "type": "receita",
-    "date": "2025-07-18",
-    "category_name": "Venda"
-  },
-  {
-    "description": "Freelance tradução",
-    "amount": 166.16,
-    "type": "receita",
-    "date": "2025-07-13",
-    "category_name": "Freelance"
-  },
-  {
-    "description": "Academia",
-    "amount": 1216.71,
-    "type": "despesa",
-    "date": "2025-07-10",
-    "category_name": "Saúde"
-  },
-  {
-    "description": "Combustível",
-    "amount": 764.15,
-    "type": "despesa",
-    "date": "2025-07-08",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Viagem",
-    "amount": 208.37,
-    "type": "despesa",
-    "date": "2025-07-07",
-    "category_name": "Lazer"
-  },
-  {
-    "description": "Livros",
-    "amount": 929.73,
-    "type": "despesa",
-    "date": "2025-07-01",
-    "category_name": "Educação"
-  },
-  {
-    "description": "Exames",
-    "amount": 1466.13,
-    "type": "despesa",
-    "date": "2025-07-19",
-    "category_name": "Saúde"
-  },
-  {
-    "description": "Conta de água",
-    "amount": 1391.1,
-    "type": "despesa",
-    "date": "2025-07-18",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Salário mensal",
-    "amount": 5232.88,
-    "type": "receita",
-    "date": "2025-07-10",
-    "category_name": "Salário"
-  },
-  {
-    "description": "Conta de água",
-    "amount": 847.26,
-    "type": "despesa",
-    "date": "2025-07-16",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Salário mensal",
-    "amount": 5367.75,
-    "type": "receita",
-    "date": "2025-08-02",
-    "category_name": "Salário"
-  },
-  {
-    "description": "Freelance programação",
-    "amount": 751.76,
-    "type": "receita",
-    "date": "2025-08-12",
-    "category_name": "Freelance"
-  },
-  {
-    "description": "Cursos online",
-    "amount": 246.59,
-    "type": "despesa",
-    "date": "2025-08-26",
-    "category_name": "Educação"
-  },
-  {
-    "description": "Condomínio",
-    "amount": 1488.99,
-    "type": "despesa",
-    "date": "2025-08-13",
-    "category_name": "Moradia"
-  },
-  {
-    "description": "Conta de luz",
-    "amount": 1486.64,
-    "type": "despesa",
-    "date": "2025-08-02",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Aluguel apartamento",
-    "amount": 335.02,
-    "type": "despesa",
-    "date": "2025-08-07",
-    "category_name": "Moradia"
-  },
-  {
-    "description": "Exames",
-    "amount": 1067.13,
-    "type": "despesa",
-    "date": "2025-08-10",
-    "category_name": "Saúde"
-  },
-  {
-    "description": "Livros",
-    "amount": 816.45,
-    "type": "despesa",
-    "date": "2025-08-16",
-    "category_name": "Educação"
-  },
-  {
-    "description": "Lanche",
-    "amount": 1410.96,
-    "type": "despesa",
-    "date": "2025-08-14",
-    "category_name": "Alimentação"
-  },
-  {
-    "description": "Venda de eletrônicos",
-    "amount": 5475.24,
-    "type": "receita",
-    "date": "2025-08-28",
-    "category_name": "Venda"
-  },
-  {
-    "description": "Spotify",
-    "amount": 907.32,
-    "type": "despesa",
-    "date": "2025-09-01",
-    "category_name": "Lazer"
-  },
-  {
-    "description": "Condomínio",
-    "amount": 137.24,
-    "type": "despesa",
-    "date": "2025-09-17",
-    "category_name": "Moradia"
-  },
-  {
-    "description": "Salário mensal",
-    "amount": 4868.51,
-    "type": "receita",
-    "date": "2025-09-24",
-    "category_name": "Salário"
-  },
-  {
-    "description": "Freelance tradução",
-    "amount": 2048.32,
-    "type": "receita",
-    "date": "2025-09-11",
-    "category_name": "Freelance"
-  },
-  {
-    "description": "Conta de internet",
-    "amount": 607.16,
-    "type": "despesa",
-    "date": "2025-09-20",
-    "category_name": "Contas"
-  },
-  {
-    "description": "Combustível",
-    "amount": 588.38,
-    "type": "despesa",
-    "date": "2025-09-27",
-    "category_name": "Transporte"
-  },
-  {
-    "description": "Salário mensal",
-    "amount": 1875.94,
-    "type": "receita",
-    "date": "2025-09-21",
-    "category_name": "Salário"
+    "description": "Freelance projeto",
+    "amount": 1629.11,
+    "date": "18/03/2023",
+    "type": "income",
+    "category": "Vendas"
   },
   {
     "description": "Farmácia",
-    "amount": 1203.88,
-    "type": "despesa",
-    "date": "2025-09-15",
-    "category_name": "Saúde"
+    "amount": 720.75,
+    "date": "23/03/2023",
+    "type": "expense",
+    "category": "Alimentação"
   },
   {
-    "description": "Conta de celular",
-    "amount": 915.12,
-    "type": "despesa",
-    "date": "2025-09-20",
-    "category_name": "Contas"
+    "description": "Internet residencial",
+    "amount": 68.15,
+    "date": "08/03/2023",
+    "type": "expense",
+    "category": "Entretenimento"
   },
   {
-    "description": "Spotify",
-    "amount": 145.59,
-    "type": "despesa",
-    "date": "2025-09-07",
-    "category_name": "Lazer"
+    "description": "Transporte público",
+    "amount": 410.14,
+    "date": "17/04/2023",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 219.56,
+    "date": "20/04/2023",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Combustível",
+    "amount": 648.64,
+    "date": "09/04/2023",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 524.99,
+    "date": "25/04/2023",
+    "type": "expense",
+    "category": "Lazer"
   },
   {
     "description": "Salário mensal",
-    "amount": 2752.07,
-    "type": "receita",
-    "date": "2025-10-11",
-    "category_name": "Salário"
+    "amount": 306.4,
+    "date": "14/04/2023",
+    "type": "income",
+    "category": "Investimentos"
   },
   {
-    "description": "Consulta médica",
-    "amount": 166.86,
-    "type": "despesa",
-    "date": "2025-10-14",
-    "category_name": "Saúde"
+    "description": "Cinema",
+    "amount": 190.98,
+    "date": "27/04/2023",
+    "type": "expense",
+    "category": "Serviços"
   },
   {
-    "description": "Exames",
-    "amount": 640.9,
-    "type": "despesa",
-    "date": "2025-10-02",
-    "category_name": "Saúde"
+    "description": "Compra online",
+    "amount": 163.83,
+    "date": "10/04/2023",
+    "type": "expense",
+    "category": "Serviços"
   },
   {
-    "description": "Conta de internet",
-    "amount": 100.92,
-    "type": "despesa",
-    "date": "2025-10-18",
-    "category_name": "Contas"
+    "description": "Freelance projeto",
+    "amount": 5458.28,
+    "date": "02/04/2023",
+    "type": "income",
+    "category": "Salário"
   },
   {
-    "description": "Restaurante",
-    "amount": 1431.38,
-    "type": "despesa",
-    "date": "2025-10-11",
-    "category_name": "Alimentação"
+    "description": "Freelance projeto",
+    "amount": 600.78,
+    "date": "17/04/2023",
+    "type": "income",
+    "category": "Investimentos"
   },
   {
-    "description": "Viagem",
-    "amount": 613.77,
-    "type": "despesa",
-    "date": "2025-10-11",
-    "category_name": "Lazer"
+    "description": "Combustível",
+    "amount": 612.57,
+    "date": "19/04/2023",
+    "type": "expense",
+    "category": "Presentes"
   },
   {
-    "description": "Freelance design",
-    "amount": 1775.42,
-    "type": "receita",
-    "date": "2025-10-26",
-    "category_name": "Freelance"
+    "description": "Salário mensal",
+    "amount": 2914.72,
+    "date": "15/05/2023",
+    "type": "income",
+    "category": "Salário"
   },
   {
-    "description": "Conta de celular",
-    "amount": 746.74,
-    "type": "despesa",
-    "date": "2025-10-05",
-    "category_name": "Contas"
+    "description": "Streaming mensal",
+    "amount": 554.49,
+    "date": "22/05/2023",
+    "type": "expense",
+    "category": "Transporte"
   },
   {
-    "description": "Restaurante",
-    "amount": 1399.88,
-    "type": "despesa",
-    "date": "2025-10-19",
-    "category_name": "Alimentação"
+    "description": "Venda item usado",
+    "amount": 1459.55,
+    "date": "23/05/2023",
+    "type": "income",
+    "category": "Salário"
   },
   {
-    "description": "Manutenção veículo",
-    "amount": 1407.21,
-    "type": "despesa",
-    "date": "2025-10-12",
-    "category_name": "Transporte"
+    "description": "Venda item usado",
+    "amount": 5849.62,
+    "date": "07/05/2023",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 351.7,
+    "date": "02/05/2023",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 365.36,
+    "date": "01/05/2023",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 3049.27,
+    "date": "11/05/2023",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 2301.47,
+    "date": "15/05/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 530.32,
+    "date": "10/05/2023",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 699.04,
+    "date": "27/05/2023",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 2660.79,
+    "date": "07/06/2023",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 4083.15,
+    "date": "28/06/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 789.99,
+    "date": "27/06/2023",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 4376.77,
+    "date": "12/06/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 2206.22,
+    "date": "13/06/2023",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 759.18,
+    "date": "28/06/2023",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 3075.13,
+    "date": "21/06/2023",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 266.29,
+    "date": "12/06/2023",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 5330.87,
+    "date": "21/06/2023",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 2594.42,
+    "date": "23/06/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 829.09,
+    "date": "18/07/2023",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Compra online",
+    "amount": 519.34,
+    "date": "24/07/2023",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Academia",
+    "amount": 651.55,
+    "date": "03/07/2023",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 150.45,
+    "date": "13/07/2023",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 5129.09,
+    "date": "21/07/2023",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Academia",
+    "amount": 283.5,
+    "date": "13/07/2023",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 86.51,
+    "date": "20/07/2023",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 2182.04,
+    "date": "12/07/2023",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 4483.84,
+    "date": "22/07/2023",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 590.91,
+    "date": "14/07/2023",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 691.46,
+    "date": "12/08/2023",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Cinema",
+    "amount": 728.4,
+    "date": "10/08/2023",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 3785.45,
+    "date": "10/08/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 5643.56,
+    "date": "13/08/2023",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 742.21,
+    "date": "26/08/2023",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 3559.29,
+    "date": "08/08/2023",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Academia",
+    "amount": 230.98,
+    "date": "03/08/2023",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 3535.82,
+    "date": "04/08/2023",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 253.05,
+    "date": "14/08/2023",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 4502.0,
+    "date": "11/08/2023",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 688.23,
+    "date": "12/09/2023",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 4363.93,
+    "date": "07/09/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Cinema",
+    "amount": 166.07,
+    "date": "04/09/2023",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 184.82,
+    "date": "26/09/2023",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 551.43,
+    "date": "13/09/2023",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 320.46,
+    "date": "03/09/2023",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 716.87,
+    "date": "23/09/2023",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Academia",
+    "amount": 489.99,
+    "date": "26/09/2023",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 143.15,
+    "date": "28/09/2023",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Combustível",
+    "amount": 236.4,
+    "date": "14/09/2023",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 2911.22,
+    "date": "01/10/2023",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Academia",
+    "amount": 329.2,
+    "date": "11/10/2023",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 5598.32,
+    "date": "04/10/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 3673.25,
+    "date": "06/10/2023",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 3029.3,
+    "date": "17/10/2023",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 714.27,
+    "date": "20/10/2023",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 667.13,
+    "date": "28/10/2023",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 4340.78,
+    "date": "24/10/2023",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 5640.83,
+    "date": "09/10/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 622.7,
+    "date": "09/10/2023",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 3686.19,
+    "date": "21/11/2023",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 362.4,
+    "date": "04/11/2023",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 1817.28,
+    "date": "12/11/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 3379.48,
+    "date": "13/11/2023",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 520.23,
+    "date": "27/11/2023",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 1640.12,
+    "date": "26/11/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 628.46,
+    "date": "03/11/2023",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 4318.46,
+    "date": "26/11/2023",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 5745.2,
+    "date": "23/11/2023",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 5467.86,
+    "date": "03/11/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 5426.09,
+    "date": "21/12/2023",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 215.74,
+    "date": "04/12/2023",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Compra online",
+    "amount": 729.04,
+    "date": "14/12/2023",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Combustível",
+    "amount": 492.63,
+    "date": "18/12/2023",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 548.29,
+    "date": "26/12/2023",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 4800.08,
+    "date": "02/12/2023",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 773.12,
+    "date": "12/12/2023",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 487.08,
+    "date": "07/12/2023",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 239.66,
+    "date": "07/12/2023",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 698.89,
+    "date": "02/12/2023",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Cinema",
+    "amount": 357.97,
+    "date": "11/01/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Academia",
+    "amount": 507.39,
+    "date": "09/01/2024",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Cinema",
+    "amount": 495.82,
+    "date": "17/01/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Compra online",
+    "amount": 798.0,
+    "date": "03/01/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 717.44,
+    "date": "04/01/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 647.13,
+    "date": "13/01/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 224.41,
+    "date": "08/01/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 575.01,
+    "date": "05/01/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 88.41,
+    "date": "01/01/2024",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 157.93,
+    "date": "28/01/2024",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 698.64,
+    "date": "25/02/2024",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 3241.7,
+    "date": "04/02/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 4566.24,
+    "date": "27/02/2024",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Academia",
+    "amount": 711.4,
+    "date": "26/02/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 1487.57,
+    "date": "20/02/2024",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Compra online",
+    "amount": 766.44,
+    "date": "01/02/2024",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 774.15,
+    "date": "03/02/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Combustível",
+    "amount": 660.64,
+    "date": "25/02/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 4167.07,
+    "date": "20/02/2024",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 23.24,
+    "date": "28/02/2024",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 1228.37,
+    "date": "07/03/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 505.4,
+    "date": "11/03/2024",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 429.18,
+    "date": "20/03/2024",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 965.06,
+    "date": "27/03/2024",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 633.79,
+    "date": "21/03/2024",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 378.09,
+    "date": "19/03/2024",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 4616.71,
+    "date": "15/03/2024",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 198.31,
+    "date": "05/03/2024",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 1625.33,
+    "date": "18/03/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 2936.99,
+    "date": "05/03/2024",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Academia",
+    "amount": 196.05,
+    "date": "14/04/2024",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 318.21,
+    "date": "23/04/2024",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 5161.95,
+    "date": "15/04/2024",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 1275.8,
+    "date": "05/04/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Academia",
+    "amount": 126.62,
+    "date": "28/04/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 466.81,
+    "date": "17/04/2024",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 728.46,
+    "date": "14/04/2024",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 605.01,
+    "date": "19/04/2024",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 47.0,
+    "date": "16/04/2024",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Compra online",
+    "amount": 356.37,
+    "date": "01/04/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 4626.18,
+    "date": "10/05/2024",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Combustível",
+    "amount": 330.47,
+    "date": "06/05/2024",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 646.6,
+    "date": "08/05/2024",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 217.89,
+    "date": "21/05/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Academia",
+    "amount": 234.82,
+    "date": "23/05/2024",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Compra online",
+    "amount": 552.98,
+    "date": "28/05/2024",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 155.8,
+    "date": "07/05/2024",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 206.5,
+    "date": "13/05/2024",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 20.14,
+    "date": "22/05/2024",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 3355.77,
+    "date": "25/05/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Combustível",
+    "amount": 257.81,
+    "date": "24/06/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 5839.6,
+    "date": "06/06/2024",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 563.3,
+    "date": "11/06/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Cinema",
+    "amount": 373.19,
+    "date": "09/06/2024",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 3839.79,
+    "date": "15/06/2024",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 450.99,
+    "date": "25/06/2024",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Academia",
+    "amount": 577.35,
+    "date": "23/06/2024",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 4303.36,
+    "date": "12/06/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 244.73,
+    "date": "07/06/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 936.98,
+    "date": "21/06/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Combustível",
+    "amount": 740.16,
+    "date": "06/07/2024",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 643.49,
+    "date": "13/07/2024",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 550.0,
+    "date": "18/07/2024",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 766.36,
+    "date": "07/07/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 301.38,
+    "date": "22/07/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 687.46,
+    "date": "22/07/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Cinema",
+    "amount": 20.96,
+    "date": "19/07/2024",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Cinema",
+    "amount": 728.32,
+    "date": "05/07/2024",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 397.46,
+    "date": "05/07/2024",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 4685.3,
+    "date": "16/07/2024",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 505.54,
+    "date": "05/08/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 491.92,
+    "date": "04/08/2024",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 337.62,
+    "date": "19/08/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Compra online",
+    "amount": 443.54,
+    "date": "06/08/2024",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 5534.22,
+    "date": "26/08/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 2149.2,
+    "date": "15/08/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 2976.39,
+    "date": "14/08/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Cinema",
+    "amount": 268.94,
+    "date": "25/08/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Compra online",
+    "amount": 419.87,
+    "date": "05/08/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 180.93,
+    "date": "05/08/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 253.91,
+    "date": "21/09/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 673.85,
+    "date": "26/09/2024",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 725.76,
+    "date": "13/09/2024",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 5903.16,
+    "date": "04/09/2024",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 678.13,
+    "date": "16/09/2024",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 450.63,
+    "date": "22/09/2024",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 5462.16,
+    "date": "17/09/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 1534.27,
+    "date": "14/09/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 781.38,
+    "date": "04/09/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 1655.19,
+    "date": "08/09/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 735.91,
+    "date": "13/10/2024",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Academia",
+    "amount": 690.07,
+    "date": "11/10/2024",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 651.82,
+    "date": "17/10/2024",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 150.27,
+    "date": "08/10/2024",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 5324.65,
+    "date": "21/10/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Cinema",
+    "amount": 309.6,
+    "date": "04/10/2024",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 226.97,
+    "date": "19/10/2024",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Cinema",
+    "amount": 68.29,
+    "date": "22/10/2024",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 467.81,
+    "date": "24/10/2024",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 301.86,
+    "date": "07/10/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 518.27,
+    "date": "25/11/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 45.41,
+    "date": "09/11/2024",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 73.38,
+    "date": "16/11/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 3107.94,
+    "date": "09/11/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 86.25,
+    "date": "28/11/2024",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 5760.42,
+    "date": "07/11/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Cinema",
+    "amount": 500.06,
+    "date": "20/11/2024",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 69.75,
+    "date": "06/11/2024",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 469.59,
+    "date": "13/11/2024",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 457.35,
+    "date": "24/11/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 3694.63,
+    "date": "14/12/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 5142.49,
+    "date": "28/12/2024",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 23.97,
+    "date": "08/12/2024",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 787.77,
+    "date": "07/12/2024",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Academia",
+    "amount": 88.77,
+    "date": "08/12/2024",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 556.9,
+    "date": "10/12/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 2802.4,
+    "date": "05/12/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 407.66,
+    "date": "15/12/2024",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 2482.65,
+    "date": "19/12/2024",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 76.74,
+    "date": "19/12/2024",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Cinema",
+    "amount": 779.04,
+    "date": "15/01/2025",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Cinema",
+    "amount": 330.04,
+    "date": "16/01/2025",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 195.01,
+    "date": "25/01/2025",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 399.5,
+    "date": "22/01/2025",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 776.24,
+    "date": "22/01/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 414.77,
+    "date": "24/01/2025",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 740.15,
+    "date": "10/01/2025",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 324.28,
+    "date": "02/01/2025",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 362.15,
+    "date": "04/01/2025",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 716.58,
+    "date": "03/01/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 5254.63,
+    "date": "23/02/2025",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 4401.93,
+    "date": "05/02/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 3974.21,
+    "date": "01/02/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 2697.82,
+    "date": "14/02/2025",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 774.92,
+    "date": "01/02/2025",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 386.69,
+    "date": "15/02/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 210.83,
+    "date": "09/02/2025",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 656.77,
+    "date": "26/02/2025",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 2457.97,
+    "date": "02/02/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Combustível",
+    "amount": 673.69,
+    "date": "20/02/2025",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 519.54,
+    "date": "16/03/2025",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 4919.59,
+    "date": "19/03/2025",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Academia",
+    "amount": 367.21,
+    "date": "04/03/2025",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 607.67,
+    "date": "22/03/2025",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Academia",
+    "amount": 74.89,
+    "date": "01/03/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 699.27,
+    "date": "06/03/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 4590.4,
+    "date": "04/03/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 627.12,
+    "date": "03/03/2025",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 616.3,
+    "date": "19/03/2025",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 388.23,
+    "date": "19/03/2025",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 389.05,
+    "date": "08/04/2025",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Combustível",
+    "amount": 750.52,
+    "date": "24/04/2025",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 747.18,
+    "date": "05/04/2025",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 554.96,
+    "date": "01/04/2025",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 40.77,
+    "date": "26/04/2025",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 5579.13,
+    "date": "16/04/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 109.6,
+    "date": "17/04/2025",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 146.73,
+    "date": "10/04/2025",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 741.85,
+    "date": "20/04/2025",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 5468.77,
+    "date": "27/04/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 1563.48,
+    "date": "10/05/2025",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 582.86,
+    "date": "01/05/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 516.56,
+    "date": "13/05/2025",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 2574.56,
+    "date": "14/05/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 1204.2,
+    "date": "14/05/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Combustível",
+    "amount": 130.91,
+    "date": "23/05/2025",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 3684.29,
+    "date": "18/05/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 326.51,
+    "date": "04/05/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 5005.2,
+    "date": "14/05/2025",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 458.64,
+    "date": "03/05/2025",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 5143.96,
+    "date": "04/06/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 328.77,
+    "date": "13/06/2025",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 732.23,
+    "date": "01/06/2025",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 5110.1,
+    "date": "27/06/2025",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 3510.59,
+    "date": "25/06/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 360.25,
+    "date": "11/06/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 1825.82,
+    "date": "09/06/2025",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 1630.21,
+    "date": "03/06/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Academia",
+    "amount": 576.48,
+    "date": "16/06/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 3664.85,
+    "date": "10/06/2025",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 422.55,
+    "date": "22/07/2025",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 340.07,
+    "date": "03/07/2025",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 4364.12,
+    "date": "25/07/2025",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 1057.56,
+    "date": "26/07/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 648.63,
+    "date": "21/07/2025",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Compra online",
+    "amount": 696.58,
+    "date": "24/07/2025",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 2532.33,
+    "date": "24/07/2025",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 284.1,
+    "date": "09/07/2025",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 5298.36,
+    "date": "02/07/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 3488.89,
+    "date": "27/07/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Combustível",
+    "amount": 215.74,
+    "date": "11/08/2025",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 1895.48,
+    "date": "23/08/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 80.92,
+    "date": "07/08/2025",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Academia",
+    "amount": 267.09,
+    "date": "27/08/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 5558.14,
+    "date": "23/08/2025",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Cinema",
+    "amount": 209.65,
+    "date": "23/08/2025",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 1522.96,
+    "date": "07/08/2025",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 589.96,
+    "date": "13/08/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 5576.46,
+    "date": "28/08/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 700.52,
+    "date": "19/08/2025",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 384.6,
+    "date": "12/09/2025",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Transporte público",
+    "amount": 429.61,
+    "date": "06/09/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 3480.42,
+    "date": "24/09/2025",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 522.81,
+    "date": "01/09/2025",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 715.21,
+    "date": "19/09/2025",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Salário mensal",
+    "amount": 5459.1,
+    "date": "23/09/2025",
+    "type": "income",
+    "category": "Freelance"
+  },
+  {
+    "description": "Compra online",
+    "amount": 198.62,
+    "date": "26/09/2025",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Cinema",
+    "amount": 377.28,
+    "date": "16/09/2025",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Academia",
+    "amount": 110.81,
+    "date": "15/09/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 32.41,
+    "date": "26/09/2025",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 2578.48,
+    "date": "07/10/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Cinema",
+    "amount": 125.74,
+    "date": "07/10/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 5305.6,
+    "date": "24/10/2025",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 276.26,
+    "date": "18/10/2025",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Venda item usado",
+    "amount": 4860.87,
+    "date": "17/10/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 722.93,
+    "date": "23/10/2025",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 660.7,
+    "date": "11/10/2025",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Cinema",
+    "amount": 358.23,
+    "date": "01/10/2025",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Jantar fora",
+    "amount": 695.67,
+    "date": "24/10/2025",
+    "type": "expense",
+    "category": "Transporte"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 432.53,
+    "date": "11/10/2025",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Combustível",
+    "amount": 490.2,
+    "date": "26/11/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 4206.07,
+    "date": "05/11/2025",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 196.4,
+    "date": "19/11/2025",
+    "type": "expense",
+    "category": "Alimentação"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 2384.01,
+    "date": "26/11/2025",
+    "type": "income",
+    "category": "Vendas"
+  },
+  {
+    "description": "Combustível",
+    "amount": 128.93,
+    "date": "09/11/2025",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Combustível",
+    "amount": 130.87,
+    "date": "24/11/2025",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 335.22,
+    "date": "07/11/2025",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Streaming mensal",
+    "amount": 451.76,
+    "date": "28/11/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Conta de energia",
+    "amount": 46.58,
+    "date": "10/11/2025",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Cinema",
+    "amount": 189.65,
+    "date": "10/11/2025",
+    "type": "expense",
+    "category": "Presentes"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 578.49,
+    "date": "05/12/2025",
+    "type": "expense",
+    "category": "Moradia"
+  },
+  {
+    "description": "Internet residencial",
+    "amount": 75.5,
+    "date": "27/12/2025",
+    "type": "expense",
+    "category": "Entretenimento"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 311.14,
+    "date": "17/12/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Compra online",
+    "amount": 781.3,
+    "date": "15/12/2025",
+    "type": "expense",
+    "category": "Lazer"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 3536.98,
+    "date": "27/12/2025",
+    "type": "income",
+    "category": "Salário"
+  },
+  {
+    "description": "Farmácia",
+    "amount": 567.22,
+    "date": "14/12/2025",
+    "type": "expense",
+    "category": "Serviços"
+  },
+  {
+    "description": "Rendimento investimento",
+    "amount": 5893.6,
+    "date": "01/12/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Freelance projeto",
+    "amount": 4246.49,
+    "date": "26/12/2025",
+    "type": "income",
+    "category": "Investimentos"
+  },
+  {
+    "description": "Supermercado",
+    "amount": 301.06,
+    "date": "02/12/2025",
+    "type": "expense",
+    "category": "Saúde"
+  },
+  {
+    "description": "Presente amigo",
+    "amount": 438.06,
+    "date": "15/12/2025",
+    "type": "expense",
+    "category": "Alimentação"
   }
 ]

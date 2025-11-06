@@ -4,4 +4,4 @@ env/
 .venv/
 *.env
 migrations/
-
+.vscode/
