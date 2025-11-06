@@ -3,6 +3,8 @@ import json
 from io import BytesIO
 from flask_jwt_extended import get_jwt_identity
 from marshmallow import ValidationError
+from sqlalchemy import func, desc, extract
+from datetime import datetime
 
 
 from app.extensions import db
@@ -57,10 +59,7 @@ def import_transactions_json(file):
 
     transactions_json = json.load(file)
 
-    count = 0
-
     for item in transactions_json:
-        count += 1
 
         item["user_id"] = current_user
 
@@ -72,12 +71,6 @@ def import_transactions_json(file):
         item["category_id"] = item.pop("category")
 
         item["category_id"] = category.id
-
-        # TESTE - VARIAÇÃO DE CADASTROS
-        if (count % 2) == 0:
-            item["type"] = "expense"
-        else:
-            item["type"] = "income"
 
         transaction_replace = {
             "user_id": item["user_id"],
@@ -102,7 +95,7 @@ def import_transactions_json(file):
     return {"message": "Transactions list import successfully"}, 201
 
 
-def get_transactions(params):
+def movement_summary(params):
     current_user = get_jwt_identity()
 
     transactions = Transaction.query.filter(Transaction.user_id == current_user)
@@ -142,6 +135,50 @@ def get_transactions(params):
     )
 
     return transactions_schema.dump(transactions_filtered), 200
+
+
+def get_expenses(params):
+
+    current_user = get_jwt_identity()
+
+    month = params.get("month", type=int)
+    year = params.get("year", type=int)
+    limit = params.get("limit", 3, type=int)
+    type = params.get("type", type=str)
+
+    if not year or len(str(year)) != 4:  # SE NAO HOUVER UM ANO OU LENGTH(ANO) != 4
+        year = datetime.now().year  # ANO IGUAL AO ANO ATUAL
+
+    if not (
+        isinstance(month, int) and 1 <= month <= 12
+    ):  # SE MES FOR MENOR QUE 1 OU MAIOR QUE 12
+        month = datetime.now().month  # MES IGUAL MES ATUAL
+
+    if type != "expense" and type != "income" and not type:
+        type = "expense"
+
+    get_expenses = (
+        Transaction.query.join(Category)
+        .filter(Transaction.user_id == current_user, Transaction.type == type)
+        .with_entities(Category.name, func.sum(Transaction.amount).label("total"))
+    )
+
+    if month:
+        get_expenses = get_expenses.filter(extract("month", Transaction.date) == month)
+
+    if year:
+        get_expenses = get_expenses.filter(extract("year", Transaction.date) == year)
+
+    get_expenses = (
+        get_expenses.group_by(Category.name).order_by(desc("total")).limit(limit).all()
+    )
+    # FILTRO DE CATEGORIAS COM MAIORES GASTOS - PER MONTH, PER YEAR
+    res_expenses = [
+        {"category": name, "total": round(float(total), 2)}
+        for name, total in get_expenses
+    ]
+
+    return res_expenses, 200
 
 
 def export_transactions_json():
