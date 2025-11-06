@@ -8,6 +8,7 @@ from app.services.transaction_services import (
     export_transactions_json,
     transaction_update,
     transaction_delete,
+    movement_summary,
 )
 
 transactions_bp = Blueprint("transactions", __name__, url_prefix="/api/transactions")
@@ -15,7 +16,7 @@ transactions_bp = Blueprint("transactions", __name__, url_prefix="/api/transacti
 
 @transactions_bp.route("/new", methods=["POST"])
 @jwt_required()
-def add_transactions():
+def create_transaction_route():
     data = request.json
 
     response, status = create_transaction(data)
@@ -25,7 +26,7 @@ def add_transactions():
 
 @transactions_bp.route("/new/import", methods=["POST"])
 @jwt_required()
-def import_transactions():
+def import_transactions_route():
     file = request.files["file"]
 
     response, status = import_transactions_json(file)
@@ -35,10 +36,20 @@ def import_transactions():
 
 @transactions_bp.route("/", methods=["GET"])
 @jwt_required()
-def transactions():
+def transactions_route():
     params = request.args
 
     response, status = get_transactions(params)
+
+    return jsonify(response), status
+
+
+@transactions_bp.route("/expenses", methods=["GET"])
+@jwt_required()
+def movement_summary_route():
+    params = request.args
+
+    response, status = movement_summary(params)
 
     return jsonify(response), status
 
