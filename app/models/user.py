@@ -1,10 +1,9 @@
-from flask_login import UserMixin
 import uuid
 
 from app.extensions import db
 
 
-class User(db.Model, UserMixin):
+class User(db.Model):
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     name = db.Column(db.String(200), nullable=False)
     email = db.Column(db.String(120), nullable=False, unique=True)
