@@ -149,7 +149,7 @@ def movement_summary(params):
     if not year or len(str(year)) != 4:  # SE NAO HOUVER UM ANO OU LENGTH(ANO) != 4
         year = datetime.now().year  # ANO IGUAL AO ANO ATUAL
 
-    if not (
+    if month and not (
         isinstance(month, int) and 1 <= month <= 12
     ):  # SE MES FOR MENOR QUE 1 OU MAIOR QUE 12
         month = datetime.now().month  # MES IGUAL MES ATUAL
