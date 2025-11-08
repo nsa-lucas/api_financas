@@ -13,6 +13,8 @@ Permite o gerenciamento de transações e categorias de forma segura e organizad
 # Transaction Route
 
 - [x] Cadastro de transação e categoria pela mesma rota
+- [x] Importação de várias transações por meio de um arquivo JSON
+- [x] Exportação de transações para um arquivo JSON
 - [x] Requisição de todas as transações
 - [x] Requisição de transações com filtros
 - [x] Requisição de resumo de gastos/receita baseados em categorias
